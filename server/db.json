@@ -1,0 +1,156 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "cover_url": "https://live.staticflickr.com/65535/51895923084_21c34b1162_o.jpg",
+      "name": "Show Henrique e Juliano",
+      "organizer_name": "HJ Eventos",
+      "location": {
+        "latitude": -23.168630524718026,
+        "longitude": -46.868967544506795
+      }
+    },
+    {
+      "id": 2,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEGBCCPSD3yy4vOHNCEIJrGRF6Wy9uFFBNA&usqp=CAU",
+      "name": "Apraz 2.0",
+      "organizer_name": "Apraz Eventos",
+      "location": {
+        "latitude": -23.184638628553582,
+        "longitude": -46.873196345145786
+      }
+    },
+    {
+      "id": 3,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozD4qpl93DPeRg_d5Z8qW1_pFr-IAjKuxk59QDQv7abP9ic_EBgbkJMI0KdZ6R1gvaaQ&usqp=CAU",
+      "name": "Baile da 17",
+      "organizer_name": "17 Eventos",
+      "location": {
+        "latitude": -23.169155317988842,
+        "longitude": -46.88670969359443
+      }
+    },
+    {
+      "id": 4,
+      "cover_url": "https://eventicket.s3-sa-east-1.amazonaws.com/imgs/21815-img-prog-510x310-thiago-ventura-1.png",
+      "name": "Standup: Thiago",
+      "organizer_name": "Thiago Ventura",
+      "location": {
+        "latitude": -23.193002604409084,
+        "longitude": -46.882225608565
+      }
+    },
+    {
+      "id": 5,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVXx1ESBqzSOM0jU4X2-iiD5K0ExOSQmcEHYicBhn_E0RHjuNhIox3D4mfai3ktBYM9TQ&usqp=CAU",
+      "name": "Baile do Tubarão",
+      "organizer_name": "Ryan SP Eventos",
+      "location": {
+        "latitude": -23.19919005759767,
+        "longitude": -46.892202835192826
+      }
+    },
+    {
+      "id": 6,
+      "cover_url": "https://cdn-az.allevents.in/events1/banners/bfbf6261e816e2b510aec81484a1c92762a712cbd98dd6d60f7e9c933ad8bf3a-rimg-w523-h600-gmir.jpg?v=1579089203",
+      "name": "Baile da Marcone",
+      "organizer_name": "Marcone Bailes",
+      "location": {
+        "latitude": -23.209693798459085,
+        "longitude": -46.85745693937542
+      }
+    },
+    {
+      "id": 7,
+      "cover_url": "https://live.staticflickr.com/65535/51895923084_21c34b1162_o.jpg",
+      "name": "Show Henrique e Juliano",
+      "organizer_name": "HJ Eventos",
+      "location": {
+        "latitude": -23.15461361659091,
+        "longitude": -46.889251722948416
+      }
+    },
+    {
+      "id": 8,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEGBCCPSD3yy4vOHNCEIJrGRF6Wy9uFFBNA&usqp=CAU",
+      "name": "Apraz 2.0",
+      "organizer_name": "Apraz Eventos",
+      "location": {
+        "latitude": -23.184966299541625,
+        "longitude": -46.911226754455335
+      }
+    },
+    {
+      "id": 9,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozD4qpl93DPeRg_d5Z8qW1_pFr-IAjKuxk59QDQv7abP9ic_EBgbkJMI0KdZ6R1gvaaQ&usqp=CAU",
+      "name": "Baile da 17",
+      "organizer_name": "17 Eventos",
+      "location": {
+        "latitude": -23.15800809693994,
+        "longitude": -46.85919767847788
+      }
+    },
+    {
+      "id": 10,
+      "cover_url": "https://eventicket.s3-sa-east-1.amazonaws.com/imgs/21815-img-prog-510x310-thiago-ventura-1.png",
+      "name": "Standup: Thiago",
+      "organizer_name": "Thiago Ventura",
+      "location": {
+        "latitude": -23.17145131380436,
+        "longitude": -46.86712830004588
+      }
+    },
+    {
+      "id": 11,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVXx1ESBqzSOM0jU4X2-iiD5K0ExOSQmcEHYicBhn_E0RHjuNhIox3D4mfai3ktBYM9TQ&usqp=CAU",
+      "name": "Baile do Tubarão",
+      "organizer_name": "Ryan SP Eventos",
+      "location": {
+        "latitude": -23.18825343673431,
+        "longitude": -46.88776030761392
+      }
+    },
+    {
+      "id": 12,
+      "cover_url": "https://cdn-az.allevents.in/events1/banners/bfbf6261e816e2b510aec81484a1c92762a712cbd98dd6d60f7e9c933ad8bf3a-rimg-w523-h600-gmir.jpg?v=1579089203",
+      "name": "Baile da Marcone",
+      "organizer_name": "Marcone Bailes",
+      "location": {
+        "latitude": -23.189457803692324,
+        "longitude": -46.895302472767376
+      }
+    }
+  ],
+  "favorites": [
+    {
+      "id": 12,
+      "cover_url": "https://cdn-az.allevents.in/events1/banners/bfbf6261e816e2b510aec81484a1c92762a712cbd98dd6d60f7e9c933ad8bf3a-rimg-w523-h600-gmir.jpg?v=1579089203",
+      "name": "Baile da Marcone",
+      "organizer_name": "Marcone Bailes",
+      "location": {
+        "latitude": -23.189457803692324,
+        "longitude": -46.895302472767376
+      }
+    },
+    {
+      "id": 2,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpEGBCCPSD3yy4vOHNCEIJrGRF6Wy9uFFBNA&usqp=CAU",
+      "name": "Apraz 2.0",
+      "organizer_name": "Apraz Eventos",
+      "location": {
+        "latitude": -23.184638628553582,
+        "longitude": -46.873196345145786
+      }
+    },
+    {
+      "id": 3,
+      "cover_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTozD4qpl93DPeRg_d5Z8qW1_pFr-IAjKuxk59QDQv7abP9ic_EBgbkJMI0KdZ6R1gvaaQ&usqp=CAU",
+      "name": "Baile da 17",
+      "organizer_name": "17 Eventos",
+      "location": {
+        "latitude": -23.169155317988842,
+        "longitude": -46.88670969359443
+      }
+    }
+  ]
+}
