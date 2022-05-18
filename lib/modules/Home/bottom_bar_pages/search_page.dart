@@ -127,7 +127,7 @@ class _SearchPageState extends State<SearchPage> {
                     ? MediaQuery.of(context).size.height * 0.50
                     : MediaQuery.of(context).size.height * 0.56,
                 width: double.infinity,
-                child: const SearchMap(),
+                child: const Text('k'),
               ),
               Expanded(
                 child: value.hasValue

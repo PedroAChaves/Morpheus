@@ -30,9 +30,9 @@ class _TicketWidgetState extends State<TicketWidget> {
   @override
   Widget build(BuildContext context) {
     return ClipPath(
-      clipper:  TicketClipper(),
+      clipper: TicketClipper(),
       child: AnimatedContainer(
-        child: widget.child ,
+        child: widget.child,
         duration: const Duration(seconds: 1),
         width: widget.width,
         height: widget.height,
