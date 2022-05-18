@@ -62,23 +62,23 @@ class _FavoritesPageState extends State<FavoritesPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SafeArea(
-          child: _isLoading
-              ? Center(
-                  child: Wrap(
-                    runSpacing: 10,
-                    spacing: 10,
-                    children: [
-                      for (var i = 0; i < 4; i++)
-                        Skeleton(
-                          width: MediaQuery.of(context).size.width * 0.94,
-                          height: 130,
-                          radius: 20,
-                        )
-                    ],
-                  ),
-                )
-              : Consumer<FavoritesAppEventsProvider>(
-                  builder: ((context, value, child) {
+        child: _isLoading
+            ? Center(
+                child: Wrap(
+                  runSpacing: 10,
+                  spacing: 10,
+                  children: [
+                    for (var i = 0; i < 4; i++)
+                      Skeleton(
+                        width: MediaQuery.of(context).size.width * 0.94,
+                        height: 130,
+                        radius: 20,
+                      ),
+                  ],
+                ),
+              )
+            : Consumer<FavoritesAppEventsProvider>(
+                builder: ((context, value, child) {
                   return RefreshIndicator(
                     color: AppColors.accent,
                     key: _refreshIndicatorKey,
@@ -92,9 +92,9 @@ class _FavoritesPageState extends State<FavoritesPage> {
                                   Padding(
                                     padding: const EdgeInsets.all(8.0),
                                     child: Image.asset(
-                                      'images/logo_sem_texto.png',
-                                      height: 90,
-                                      width: 120,
+                                      'images/logo_only.png',
+                                      height: 60,
+                                      width: 90,
                                     ),
                                   ),
                                   const Text(
@@ -136,7 +136,9 @@ class _FavoritesPageState extends State<FavoritesPage> {
                             },
                           ),
                   );
-                }))),
+                }),
+              ),
+      ),
     );
   }
 }

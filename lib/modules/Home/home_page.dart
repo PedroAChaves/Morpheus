@@ -68,9 +68,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   for (var i = 0; i < 6; i++)
                     const Skeleton(
                       width: 180,
-                      height: 220,
+                      height: 250,
                       radius: 20,
-                    )
+                    ),
                 ],
               ),
             )
@@ -82,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 itemCount: _events.length,
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 360,
-                  mainAxisExtent: 200,
+                  mainAxisExtent: 210,
                 ),
                 itemBuilder: (context, index) {
                   return GestureDetector(

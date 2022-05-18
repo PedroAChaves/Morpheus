@@ -22,8 +22,10 @@ class _EventCardState extends State<EventCard> {
     favorites = Provider.of<FavoritesAppEventsProvider>(context);
 
     return Container(
-      height: 200,
-      width: 190,
+      padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.001),
+      constraints: BoxConstraints(
+        maxWidth: MediaQuery.of(context).size.width * 0.99,
+      ),
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -41,7 +43,7 @@ class _EventCardState extends State<EventCard> {
           children: [
             SizedBox(
               height: 120,
-              width: 190,
+              width: double.infinity,
               child: Image.network(
                 widget.event.coverUrl,
                 fit: BoxFit.fill,
@@ -53,12 +55,12 @@ class _EventCardState extends State<EventCard> {
                   if (loader == null) {
                     return child;
                   }
-                  return const Skeleton(height: 120, width: 190);
+                  return const Skeleton(height: 120, width: double.infinity);
                 },
               ),
             ),
             Container(
-              height: 70,
+              height: 80,
               padding: const EdgeInsets.only(right: 10.0, left: 10.0, top: 14),
               child: Column(
                 children: [

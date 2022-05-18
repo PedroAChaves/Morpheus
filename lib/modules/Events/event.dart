@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:morpheus/models/event.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
+import 'package:provider/provider.dart';
 
+import '../../providers/home/favorites_events.dart';
 import '../../shared/widgets/profile/account_button.dart';
 
 class DetailScreen extends StatelessWidget {
   final AppEvent event;
-  const DetailScreen({Key? key, required this.event}) : super(key: key);
+  DetailScreen({Key? key, required this.event}) : super(key: key);
+  late FavoritesAppEventsProvider favorites;
 
   @override
   Widget build(BuildContext context) {
+    favorites = Provider.of<FavoritesAppEventsProvider>(context);
+
     return Scaffold(
       body: ListView(
         children: [
@@ -41,9 +46,12 @@ class DetailScreen extends StatelessWidget {
                       Positioned(
                         right: 1,
                         child: IconButton(
-                          onPressed: () {},
-                          icon: const Icon(
-                            Icons.star_border_sharp,
+                          onPressed: () => favorites.save(event),
+                          icon: Icon(
+                            favorites.events.contains(event)
+                                ? Icons.star
+                                : Icons.star_border,
+                            // Icons.star_border_sharp,
                             color: Colors.white,
                             size: 28,
                           ),
