@@ -6,7 +6,6 @@ class BuyTicket extends StatefulWidget {
   final String type;
   final String lot;
   final double price;
-  // int qde = 0;
 
   const BuyTicket({
     Key? key,
@@ -55,12 +54,12 @@ class _BuyTicketState extends State<BuyTicket> {
                   if (qde > 0) {
                     setState(() {
                       qde--;
-                      widget.price * qde;
+                      // widget.all.total = widget.price * qde;
                     });
                   } else {
                     setState(() {
                       qde = qde;
-                      widget.price * qde;
+                      // widget.all.total = widget.price * qde;
                     });
                   }
                 },
@@ -72,7 +71,7 @@ class _BuyTicketState extends State<BuyTicket> {
                 onPressed: () {
                   setState(() {
                     qde++;
-                    widget.price * qde;
+                    // widget.all.total = widget.price * qde;
                   });
                 },
                 icon: const Icon(Icons.add_circle_outline_rounded),

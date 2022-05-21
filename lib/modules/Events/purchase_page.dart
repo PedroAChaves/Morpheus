@@ -31,7 +31,7 @@ class _PurchasePageState extends State<PurchasePage> {
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 BuyTicket(
                   type: 'Pista ',
                   lot: '3° lote',
@@ -47,10 +47,10 @@ class _PurchasePageState extends State<PurchasePage> {
                   lot: '1° lote',
                   price: 200.00,
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.symmetric(vertical: 20),
                   child: Text(
-                    'Subtotal: R\$ ',
+                    'Subtotal: R\$ ' '',
                     style: TextStyle(
                       fontSize: 20,
                     ),
