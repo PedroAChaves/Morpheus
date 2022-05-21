@@ -84,31 +84,39 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     key: _refreshIndicatorKey,
                     onRefresh: _refresh,
                     child: value.events.isEmpty
-                        ? ListView.builder(
-                            itemCount: 1,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Image.asset(
-                                      'images/logo_only.png',
-                                      height: 60,
-                                      width: 90,
+                        ? SizedBox(
+                            width: double.infinity,
+                            height: double.infinity,
+                            child: Center(
+                              child: SingleChildScrollView(
+                                physics: const AlwaysScrollableScrollPhysics(),
+                                child: Column(
+
+                                  children: [
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Opacity(
+                                        opacity: 0.7,
+                                        child: Image.asset(
+                                          'images/logo_only.png',
+                                          height: 60,
+                                          width: 90,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                  const Text(
-                                    'Nenhum evento favoritado',
-                                    style: TextStyle(
-                                      color: Color(0xffAEAA9E),
-                                      fontFamily: 'Inter',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w600,
+                                    const Text(
+                                      'Nenhum evento favoritado',
+                                      style: TextStyle(
+                                        color: Color(0xffAEAA9E),
+                                        fontFamily: 'Inter',
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w600,
+                                      ),
                                     ),
-                                  ),
-                                ],
-                              );
-                            },
+                                  ],
+                                ),
+                              ),
+                            ),
                           )
                         : ListView.builder(
                             itemCount: value.events.length,
