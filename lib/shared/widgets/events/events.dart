@@ -75,7 +75,7 @@ class _EventCardState extends State<EventCard> {
                       ),
                       Flexible(
                         child: Text(
-                          widget.event.startDatetime.day.toString(),
+                          widget.event.startDateTime.day.toString(),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -86,7 +86,7 @@ class _EventCardState extends State<EventCard> {
                     children: [
                       Flexible(
                         child: Text(
-                          widget.event.organizerName,
+                          widget.event.organizer.name,
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),

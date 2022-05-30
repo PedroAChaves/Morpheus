@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:morpheus/models/event.dart';
+import 'package:morpheus/modules/Events/purchase_page.dart';
+import 'package:morpheus/providers/events/selected_tickets.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:provider/provider.dart';
 
@@ -18,63 +20,62 @@ class DetailScreen extends StatelessWidget {
     var date = DateTime.now();
 
     return Scaffold(
-      body: ListView(
-        children: [
-          Center(
-            child: Column(
-              children: [
-                Stack(
-                  children: <Widget>[
-                    Hero(
-                      tag: event.id.toString(),
-                      child: Image.network(
-                        event.coverUrl,
-                      ),
+      body: CustomScrollView(
+        physics: const BouncingScrollPhysics(),
+        slivers: [
+          SliverAppBar(
+            backgroundColor: AppColors.primary,
+            expandedHeight: 300,
+            stretch: true,
+            centerTitle: true,
+            leading: IconButton(
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.adaptive.arrow_back),
+            ),
+            title: Center(
+              child: Image.asset('images/title.png', height: 100, width: 110),
+            ),
+            pinned: true,
+            flexibleSpace: FlexibleSpaceBar(
+              centerTitle: true,
+              stretchModes: const [
+                StretchMode.zoomBackground,
+                StretchMode.fadeTitle
+              ],
+              background: Stack(
+                fit: StackFit.expand,
+                children: [
+                  Hero(
+                    tag: event.id,
+                    child: Image.network(
+                      event.coverUrl,
+                      fit: BoxFit.cover,
                     ),
-                    IconButton(
-                      onPressed: () {
-                        Navigator.pop(context);
-                      },
-                      icon: const Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                        size: 25,
-                      ),
-                    ),
-                    Positioned(
-                      right: 1,
-                      child: IconButton(
-                        onPressed: () => favorites.save(event),
-                        icon: Icon(
-                          favorites.events.contains(event)
-                              ? Icons.star
-                              : Icons.star_border,
-                          // Icons.star_border_sharp,
-                          color: Colors.white,
-                          size: 28,
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-                // Text(event.id),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
                 Padding(
                   padding: const EdgeInsets.only(left: 8, top: 10),
                   child: Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const Icon(
+                    children: const [
+                      Icon(
                         Icons.verified_sharp,
                         size: 25,
                         color: AppColors.accent,
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 5),
+                        padding: EdgeInsets.only(left: 5),
                         child: Text(
-                          event.name,
+                          "event.name",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.start,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'Nunito',
                             fontSize: 24,
                             fontWeight: FontWeight.w900,
@@ -265,19 +266,19 @@ class DetailScreen extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 8, top: 10),
                   child: Row(
-                    children: [
-                      const CircleAvatar(
+                    children: const [
+                      CircleAvatar(
                         radius: 30,
                         foregroundImage: NetworkImage(
                             'https://i0.statig.com.br/bancodeimagens/du/oh/pa/duohpari1d3eyg9iyvqw44y3w.jpg'),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 5),
+                        padding: EdgeInsets.only(left: 5),
                         child: Text(
-                          event.organizerName,
+                          "event.organizer.name",
                           overflow: TextOverflow.ellipsis,
                           textAlign: TextAlign.start,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontFamily: 'Nunito',
                             fontSize: 13,
                             fontWeight: FontWeight.w700,
@@ -288,22 +289,87 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: AccountButton(
-                    icon: Icon(Icons.bookmark_added_outlined),
-                    text: Text(
-                      "Ver Ingressos",
-                      style: TextStyle(
-                        fontSize: 20,
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ChangeNotifierProvider<SelectedTicketsProvider>(
+                            create: (_) => SelectedTicketsProvider(),
+                            child: const PurchasePage(),
+                          ),
+                        ),
+                      );
+                    },
+                    child: const AccountButton(
+                      icon: Icon(Icons.bookmark_added_outlined),
+                      text: Text(
+                        "Ver Ingressos",
+                        style: TextStyle(fontSize: 20),
                       ),
+                      pagePath: "",
                     ),
-                    pagePath: "",
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ChangeNotifierProvider<SelectedTicketsProvider>(
+                            create: (_) => SelectedTicketsProvider(),
+                            child: const PurchasePage(),
+                          ),
+                        ),
+                      );
+                    },
+                    child: const AccountButton(
+                      icon: Icon(Icons.bookmark_added_outlined),
+                      text: Text(
+                        "Ver Ingressos",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      pagePath: "",
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              ChangeNotifierProvider<SelectedTicketsProvider>(
+                            create: (_) => SelectedTicketsProvider(),
+                            child: const PurchasePage(),
+                          ),
+                        ),
+                      );
+                    },
+                    child: const AccountButton(
+                      icon: Icon(Icons.bookmark_added_outlined),
+                      text: Text(
+                        "Ver Ingressos",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      pagePath: "",
+                    ),
                   ),
                 ),
               ],
             ),
-          ),
+          )
         ],
       ),
     );

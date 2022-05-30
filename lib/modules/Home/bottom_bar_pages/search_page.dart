@@ -11,7 +11,6 @@ import 'package:morpheus/providers/search/selected_event.dart';
 import 'package:morpheus/shared/functions/get_geo_position.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/search/country_state.dart';
-import 'package:morpheus/shared/widgets/search/map/google_map.dart';
 import 'package:morpheus/shared/widgets/search/see_events_button.dart';
 import 'package:morpheus/shared/widgets/search/state_city.dart';
 import 'package:provider/provider.dart';
@@ -90,15 +89,36 @@ class _SearchPageState extends State<SearchPage> {
     for (var event in data) {
       events.add(
         AppEvent(
-            event['id'].toString(),
-            event['name'],
-            EventLocation(
-              event['location']['latitude'],
-              event['location']['longitude'],
-            ),
-            event['cover_url'],
-            DateTime.now(),
-            event['organizer_name']),
+                event['id'].toString(),
+                event['name'],
+                EventLocation(
+                  event['location']['latitude'],
+                  event['location']['longitude'],
+                  event['id'],
+                  event['eventId'],
+                  event['street'],
+                  event['district'],
+                  event['state'],
+                  event['city'],
+                  event['number'],
+                  event['description'],
+                  event['postalCode'],
+                  event['createdAt'],
+                  event['updatedAt'],
+                ),
+                event['cover_url'],
+                event['updated_at'],
+                event['organizer_name'],
+                event['age_group'],
+                event['description'],
+                event['status'],
+                event['category'],
+                event['subject'],
+                event['created_at'],
+                event['end_date_time'],
+                event['start_date_time'],
+                event['ticket_options'],
+              ),
       );
     }
 
@@ -213,11 +233,11 @@ class _SearchPageState extends State<SearchPage> {
                                     ),
                                   ),
                                   Text(
-                                    value.event.startDatetime.toString(),
+                                    value.event.startDateTime.toString(),
                                     style: const TextStyle(fontSize: 18),
                                   ),
                                   Text(
-                                    value.event.organizerName,
+                                    value.event.organizer.name,
                                     style: const TextStyle(fontSize: 18),
                                   ),
                                 ],
@@ -270,7 +290,7 @@ class _SearchPageState extends State<SearchPage> {
                               ),
                             ),
                             const Text(
-                              'Encontre facilmente eventos ao seu redor a partir da sua localização atual ou selecionando um estado e cidade manualmente!',
+                              'Encontre facilmente eventos ao seu redor a partir da sua localização atual ou selecionando um estado event cidade manualmente!',
                               overflow: TextOverflow.fade,
                               textAlign: TextAlign.center,
                               style: TextStyle(

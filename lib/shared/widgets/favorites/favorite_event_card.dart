@@ -61,9 +61,9 @@ class _FavoriteEventCardState extends State<FavoriteEventCard> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     textDirection: TextDirection.ltr,
                     children: [
-                      Text(widget.event.startDatetime.toString()),
+                      Text(widget.event.startDateTime.toString()),
                       Text(widget.event.name),
-                      Text(widget.event.organizerName)
+                      Text(widget.event.organizer.name)
                     ],
                   ),
                 ),

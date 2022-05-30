@@ -1,138 +1,146 @@
 {
   "events": [
     {
-      "event": {
-        "id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
-        "created_at": "2022-05-14T16:50:19.2672852Z",
-        "updated_at": "2022-05-14T16:50:19.2672854Z",
-        "name": "Baile de Osasco 7.0",
-        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
-        "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-        "organizer_account_id": "7bffea3b-3555-49b4-b00a-57f14ecbabff",
-        "age_group": 18,
-        "status": "available",
-        "location": {
-          "id": "ed22a92f-81bc-44c8-8ad8-f9a707cdc368",
+      "id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
+      "created_at": "2022-05-14T16:50:19.2672852Z",
+      "updated_at": "2022-05-14T16:50:19.2672854Z",
+      "name": "Baile de Osasco 7.0",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
+      "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
+      "age_group": 18,
+      "status": "available",
+      "location": {
+        "id": "ed22a92f-81bc-44c8-8ad8-f9a707cdc368",
+        "event_id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
+        "street": "Rio de Janeiro Street",
+        "district": "Jardim Tarumã",
+        "state": "MG",
+        "city": "Osasco",
+        "number": 645,
+        "postal_code": "13216570",
+        "description": "Yellow house near to a soccer field",
+        "latitude": -23.997692011170457,
+        "longitude": -46.2573181565571,
+        "created_at": "2022-05-14T16:50:19.2672981Z",
+        "updated_at": "2022-05-14T16:50:19.2672982Z"
+      },
+      "ticket_options": [
+        {
+          "id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
+          "created_at": "2022-05-14T16:50:19.2676788Z",
+          "updated_at": "2022-05-14T16:50:19.2676789Z",
           "event_id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
-          "street": "Rio de Janeiro Street",
-          "district": "Jardim Tarumã",
-          "state": "MG",
-          "city": "Osasco",
-          "number": 645,
-          "postal_code": "13216570",
-          "description": "Yellow house near to a soccer field",
-          "latitude": -23.997692011170457,
-          "longitude": -46.2573181565571,
-          "created_at": "2022-05-14T16:50:19.2672981Z",
-          "updated_At": "2022-05-14T16:50:19.2672982Z"
+          "title": "V.I.P",
+          "description": "V.I.P tickets provider a great experience to the user",
+          "sales_start_datetime": "2022-05-29T13:21:36.639Z",
+          "sales_end_datetime": "2022-09-29T21:21:36.639Z",
+          "maximum_buys_quantity": 1,
+          "minimum_buys_quantity": 4,
+          "lots": [
+            {
+              "id": "0a3ea23f-b3e7-4ede-bd81-079b2c639dec",
+              "created_at": "2022-05-14T16:50:19.2677637Z",
+              "updated_at": "2022-05-14T16:50:19.2677638Z",
+              "number": 1,
+              "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
+              "price": 149.99,
+              "total_quantity": 200,
+              "remaining_quantity": 200
+            },
+            {
+              "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+              "created_at": "2022-05-14T16:50:19.268243Z",
+              "updated_at": "2022-05-14T16:50:19.2682431Z",
+              "number": 2,
+              "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
+              "price": 199.99,
+              "quantity": 150
+            },
+            {
+              "id": "34f1f088-9f19-4063-8b0c-ba07b4e4722b",
+              "created_at": "2022-05-14T16:50:19.2682456Z",
+              "updated_at": "2022-05-14T16:50:19.2682457Z",
+              "number": 3,
+              "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
+              "price": 249.99,
+              "quantity": 100
+            },
+            {
+              "id": "fa1a8e5d-ed97-4d01-a106-fc801b579b0c",
+              "created_at": "2022-05-14T16:50:19.2682481Z",
+              "updated_at": "2022-05-14T16:50:19.2682481Z",
+              "number": 4,
+              "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
+              "price": 299.99,
+              "quantity": 50
+            }
+          ]
         },
-        "ticket_options": [
-          {
-            "id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
-            "created_at": "2022-05-14T16:50:19.2676788Z",
-            "updated_at": "2022-05-14T16:50:19.2676789Z",
-            "event_id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
-            "title": "V.I.P",
-            "description": "V.I.P tickets provider a great experience to the user",
-            "sales_start_datetime": "2022-05-29T13:21:36.639Z",
-            "sales_end_datetime": "2022-09-29T21:21:36.639Z",
-            "maximum_buys_quantity": 1,
-            "minimum_buys_quantity": 4,
-            "lots": [
-              {
-                "id": "0a3ea23f-b3e7-4ede-bd81-079b2c639dec",
-                "created_at": "2022-05-14T16:50:19.2677637Z",
-                "updated_at": "2022-05-14T16:50:19.2677638Z",
-                "number": 1,
-                "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
-                "price": 149.99,
-                "quantity": 200
-              },
-              {
-                "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
-                "created_at": "2022-05-14T16:50:19.268243Z",
-                "updated_at": "2022-05-14T16:50:19.2682431Z",
-                "number": 2,
-                "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
-                "price": 199.99,
-                "quantity": 150
-              },
-              {
-                "id": "34f1f088-9f19-4063-8b0c-ba07b4e4722b",
-                "created_at": "2022-05-14T16:50:19.2682456Z",
-                "updated_at": "2022-05-14T16:50:19.2682457Z",
-                "number": 3,
-                "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
-                "price": 249.99,
-                "quantity": 100
-              },
-              {
-                "id": "fa1a8e5d-ed97-4d01-a106-fc801b579b0c",
-                "created_at": "2022-05-14T16:50:19.2682481Z",
-                "updated_at": "2022-05-14T16:50:19.2682481Z",
-                "number": 4,
-                "ticket_option_id": "b7f6a31e-f6e9-4478-a56a-171fc92a273c",
-                "price": 299.99,
-                "quantity": 50
-              }
-            ]
-          },
-          {
-            "id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
-            "created_at": "2022-05-14T16:50:19.2682516Z",
-            "updated_at": "2022-05-14T16:50:19.2682516Z",
-            "event_id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
-            "title": "Track",
-            "description": "track tickets provider a good experience to the user",
-            "sales_start_datetime": "2022-05-29T13:21:36.639Z",
-            "sales_end_datetime": "2022-09-29T21:21:36.639Z",
-            "maximum_buys_quantity": 1,
-            "minimum_buys_quantity": 6,
-            "lots": [
-              {
-                "id": "f1a384aa-8743-4b9a-b2a7-9a57588f54ab",
-                "created_at": "2022-05-14T16:50:19.2682877Z",
-                "updated_at": "2022-05-14T16:50:19.2682877Z",
-                "number": 1,
-                "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
-                "quantity": 200
-              },
-              {
-                "id": "a713f2e1-14d2-4d29-8b72-34c4ad01430f",
-                "created_at": "2022-05-14T16:50:19.2682897Z",
-                "updated_at": "2022-05-14T16:50:19.2682897Z",
-                "number": 2,
-                "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
-                "price": 79.99,
-                "quantity": 150
-              },
-              {
-                "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
-                "created_at": "2022-05-14T16:50:19.2682915Z",
-                "updated_at": "2022-05-14T16:50:19.2682916Z",
-                "number": 3,
-                "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
-                "price": 119.99,
-                "quantity": 100
-              },
-              {
-                "id": "27ec25d2-bde4-41bb-8b27-df2bd81a9199",
-                "created_at": "2022-05-14T16:50:19.2682933Z",
-                "updated_at": "2022-05-14T16:50:19.2682933Z",
-                "number": 4,
-                "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
-                "price": 159.99,
-                "quantity": 50
-              }
-            ]
-          }
-        ],
-        "start_datetime": "2022-05-29T13:21:36.639Z",
-        "end_datetime": "2022-05-29T14:21:36.639Z",
-        "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-        "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
-        "visibility": "public"
-      }
+        {
+          "id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
+          "created_at": "2022-05-14T16:50:19.2682516Z",
+          "updated_at": "2022-05-14T16:50:19.2682516Z",
+          "event_id": "a1a71b3d-9783-438a-be6f-65ac27473c3a",
+          "title": "Track",
+          "description": "track tickets provider a good experience to the user",
+          "sales_start_datetime": "2022-05-29T13:21:36.639Z",
+          "sales_end_datetime": "2022-09-29T21:21:36.639Z",
+          "maximum_buys_quantity": 1,
+          "minimum_buys_quantity": 6,
+          "lots": [
+            {
+              "id": "f1a384aa-8743-4b9a-b2a7-9a57588f54ab",
+              "created_at": "2022-05-14T16:50:19.2682877Z",
+              "updated_at": "2022-05-14T16:50:19.2682877Z",
+              "number": 1,
+              "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
+              "quantity": 200
+            },
+            {
+              "id": "a713f2e1-14d2-4d29-8b72-34c4ad01430f",
+              "created_at": "2022-05-14T16:50:19.2682897Z",
+              "updated_at": "2022-05-14T16:50:19.2682897Z",
+              "number": 2,
+              "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
+              "price": 79.99,
+              "quantity": 150
+            },
+            {
+              "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+              "created_at": "2022-05-14T16:50:19.2682915Z",
+              "updated_at": "2022-05-14T16:50:19.2682916Z",
+              "number": 3,
+              "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
+              "price": 119.99,
+              "quantity": 100
+            },
+            {
+              "id": "27ec25d2-bde4-41bb-8b27-df2bd81a9199",
+              "created_at": "2022-05-14T16:50:19.2682933Z",
+              "updated_at": "2022-05-14T16:50:19.2682933Z",
+              "number": 4,
+              "ticket_option_id": "6a2778f6-b09b-4f9f-8b98-582cab98b8e3",
+              "price": 159.99,
+              "quantity": 50
+            }
+          ]
+        }
+      ],
+      "start_datetime": "2022-05-29T13:21:36.639Z",
+      "end_datetime": "2022-05-29T14:21:36.639Z",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
+      "visibility": "public"
     },
     {
       "id": "d07ba8f8-98af-4826-b741-b565d932e342",
@@ -141,7 +149,10 @@
       "name": "Baile do Guaruja",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -157,12 +168,18 @@
         "latitude": -23.997692011170457,
         "longitude": -46.2573181565571,
         "created_at": "2022-04-30T18:25:50.661687Z",
-        "updated_At": "2022-04-30T18:25:50.661687Z"
+        "updated_at": "2022-04-30T18:25:50.661687Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -172,7 +189,10 @@
       "name": "Baile da Enseada",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -188,12 +208,18 @@
         "latitude": -23.986184259330454,
         "longitude": -46.22456982274239,
         "created_at": "2022-04-30T18:26:39.263736Z",
-        "updated_At": "2022-04-30T18:26:39.263737Z"
+        "updated_at": "2022-04-30T18:26:39.263737Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -203,7 +229,10 @@
       "name": "Baile da Enseada",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -219,12 +248,18 @@
         "latitude": -23.986184259330454,
         "longitude": -46.22456982274239,
         "created_at": "2022-04-30T18:28:10.438251Z",
-        "updated_At": "2022-04-30T18:28:10.438251Z"
+        "updated_at": "2022-04-30T18:28:10.438251Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -234,7 +269,10 @@
       "name": "Baile do Guaruja",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -250,12 +288,18 @@
         "latitude": -23.997692011170457,
         "longitude": -46.2573181565571,
         "created_at": "2022-04-30T18:28:27.356259Z",
-        "updated_At": "2022-04-30T18:28:27.356259Z"
+        "updated_at": "2022-04-30T18:28:27.356259Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -265,7 +309,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -281,12 +328,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:24:34.150391Z",
-        "updated_At": "2022-04-12T19:24:34.150391Z"
+        "updated_at": "2022-04-12T19:24:34.150391Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -296,7 +349,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -312,12 +368,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:43:05.374728Z",
-        "updated_At": "2022-04-12T19:43:05.374728Z"
+        "updated_at": "2022-04-12T19:43:05.374728Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -327,7 +389,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -343,12 +408,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:43:10.888173Z",
-        "updated_At": "2022-04-12T19:43:10.888173Z"
+        "updated_at": "2022-04-12T19:43:10.888173Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -358,7 +429,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -374,12 +448,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:43:14.932008Z",
-        "updated_At": "2022-04-12T19:43:14.932009Z"
+        "updated_at": "2022-04-12T19:43:14.932009Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -389,7 +469,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 14,
       "status": "available",
       "location": {
@@ -405,12 +488,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:22:57.113779Z",
-        "updated_At": "2022-04-12T19:22:57.113779Z"
+        "updated_at": "2022-04-12T19:22:57.113779Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -420,7 +509,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 10,
       "status": "available",
       "location": {
@@ -436,12 +528,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:24:30.077921Z",
-        "updated_At": "2022-04-12T19:24:30.077921Z"
+        "updated_at": "2022-04-12T19:24:30.077921Z"
       },
       "start_datetime": "2022-11-21T13:21:36.639Z",
       "end_datetime": "2022-11-21T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -451,7 +549,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 14,
       "status": "available",
       "location": {
@@ -467,12 +568,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:22:50.795332Z",
-        "updated_At": "2022-04-12T19:22:50.795332Z"
+        "updated_at": "2022-04-12T19:22:50.795332Z"
       },
       "start_datetime": "2022-11-22T13:21:36.639Z",
       "end_datetime": "2022-11-22T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -482,7 +589,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -498,12 +608,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T19:22:39.820894Z",
-        "updated_At": "2022-04-12T19:22:39.820894Z"
+        "updated_at": "2022-04-12T19:22:39.820894Z"
       },
       "start_datetime": "2022-11-28T13:21:36.639Z",
       "end_datetime": "2022-11-28T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -513,7 +629,10 @@
       "name": "RJ event",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -529,12 +648,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T18:44:07.920808Z",
-        "updated_At": "2022-04-12T18:44:07.920808Z"
+        "updated_at": "2022-04-12T18:44:07.920808Z"
       },
       "start_datetime": "2022-11-29T13:21:36.639Z",
       "end_datetime": "2022-11-29T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -544,7 +669,10 @@
       "name": "asdfa",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 18,
       "status": "available",
       "location": {
@@ -560,12 +688,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T18:45:28.327619Z",
-        "updated_At": "2022-04-12T18:45:28.327619Z"
+        "updated_at": "2022-04-12T18:45:28.327619Z"
       },
       "start_datetime": "2022-11-29T13:21:36.639Z",
       "end_datetime": "2022-11-29T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     },
     {
@@ -575,7 +709,10 @@
       "name": "RJ event",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, qui! Eum saepe autem ab reprehenderit. Maxime, recusandae tempora pariatur quia provident qui, fugiat in cum corporis vitae, beatae quas! Aliquam.",
       "cover_url": "https://cdn-az.allevents.in/events4/banners/0d3457fed68d2d10714a47ed4706dd6a8bcb0c1ea1d7bfa7716773d2953707a3-rimg-w960-h355-gmir.png?v=1648094125",
-      "organizer_account_id": "91e231a7-4232-43e0-ad6f-8e5b1b21e2f8",
+      "organizer": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Morpheus Eventos"
+      },
       "age_group": 16,
       "status": "available",
       "location": {
@@ -591,12 +728,18 @@
         "latitude": -23.16869934709821,
         "longitude": -46.86894656228068,
         "created_at": "2022-04-12T18:36:57.194561Z",
-        "updated_At": "2022-04-12T18:36:57.194561Z"
+        "updated_at": "2022-04-12T18:36:57.194561Z"
       },
       "start_datetime": "2022-11-29T13:21:36.639Z",
       "end_datetime": "2022-11-29T21:21:36.639Z",
-      "category": "d352680e-88f3-4af4-8ba7-59aad6766856",
-      "subject": "fc8a33aa-2bde-4e35-97e7-49bdfde1eb02",
+      "category": {
+        "id": "023ed0c2-5bfc-44c8-97a5-0638509f4082",
+        "name": "Category Name"
+      },
+      "subject": {
+        "id": "fca06b8f-6102-43fd-954e-2d8321a96e94",
+        "name": "Subject Name"
+      },
       "visibility": "public"
     }
   ],

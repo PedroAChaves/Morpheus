@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "json-server ./db.json",
+    "dev": "json-server ./mock.json",
     "uploader": "node uploader.js"
   },
   "author": "",

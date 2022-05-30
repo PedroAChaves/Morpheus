@@ -27,21 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
       var response = await http.get(Uri.parse('http://localhost:3000/events/'));
       setState(() {
         final value = List.from(jsonDecode(response.body));
-        _events = value
-            .map<AppEvent>(
-              (e) => AppEvent(
-                e['id'].toString(),
-                e['name'],
-                EventLocation(
-                  e['location']['latitude'],
-                  e['location']['longitude'],
-                ),
-                e['cover_url'],
-                DateTime.now(),
-                e['organizer_name'],
-              ),
-            )
-            .toList();
+        _events = value.map<AppEvent>((e) => AppEvent.fromJson(e)).toList();
       });
     } catch (err) {
       print(err);

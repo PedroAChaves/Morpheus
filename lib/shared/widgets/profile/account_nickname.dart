@@ -4,7 +4,7 @@ import 'package:file_picker/file_picker.dart'; // remove later
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:morpheus/shared/themes/app_colors.dart';
-import 'package:morpheus/shared/widgets/profile/image_view.dart';
+import 'package:morpheus/shared/widgets/image_view.dart';
 
 class NicknamePage extends StatefulWidget {
   final String? accountAvatarUrl;

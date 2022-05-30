@@ -98,22 +98,3 @@ class _TicketsPageState extends State<TicketsPage> {
     );
   }
 }
-
-
-              // Padding(
-              //   padding: const EdgeInsets.all(8.0),
-              //   child: Image.asset(
-              //     'images/logo_sem_texto.png',
-              //     height: 90,
-              //     width: 120,
-              //   ),
-              // ),
-              // const Text(
-              //   'Nenhum ingresso comprado',
-              //   style: TextStyle(
-              //     color: Color(0xffAEAA9E),
-              //     fontFamily: 'Inter',
-              //     fontSize: 18,
-              //     fontWeight: FontWeight.w600,
-              //   ),
-              // ),
