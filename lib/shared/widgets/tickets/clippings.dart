@@ -9,105 +9,70 @@ class ClippingsColumn extends StatelessWidget {
       children: const [
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
         SizedBox(
-          height: 3,
+          height: 5,
         ),
         CircleAvatar(
           backgroundColor: Colors.white,
-          radius: 3,
-        ),
-        SizedBox(
-          height: 3,
-        ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 3,
-        ),
-        SizedBox(
-          height: 3,
-        ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 3,
-        ),
-        SizedBox(
-          height: 3,
-        ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 3,
-        ),
-        SizedBox(
-          height: 3,
-        ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 3,
-        ),
-        SizedBox(
-          height: 3,
-        ),
-        CircleAvatar(
-          backgroundColor: Colors.white,
-          radius: 3,
+          radius: 4,
         ),
       ],
     );

@@ -21,7 +21,7 @@ class CardTicket extends StatelessWidget {
                   borderRadius: BorderRadius.all(
                     Radius.circular(12),
                   ),
-                  color: Colors.amber,
+                  color: Color(0xffe5e5e5),
                 ),
                 width: double.infinity,
                 height: 170,
@@ -38,7 +38,7 @@ class CardTicket extends StatelessWidget {
                           ),
                           fit: BoxFit.cover,
                         ),
-                        color: Colors.amber,
+                        color: Color(0xffe5e5e5),
                       ),
                       width: 187,
                       // height: 170,
@@ -46,11 +46,35 @@ class CardTicket extends StatelessWidget {
                     Expanded(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          const Text("Show Henrique e Juliano"),
-                          Text(DateTime.now().toIso8601String()),
-                          const Text("Av. Imigrantes Jundiaí SP"),
-                          const Text("HJ Eventos"),
+                          const Text(
+                            "Show Henrique e Juliano",
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                            ),
+                            overflow: TextOverflow.clip,
+                            textAlign: TextAlign.center,
+                          ),
+                          const Text(
+                            "HJ Eventos",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 100, 100, 100),
+                            ),
+                          ),
+                          Text(
+                            DateTime.now().toIso8601String(),
+                            style: const TextStyle(
+                              color: Colors.red,
+                            ),
+                          ),
+                          const Text(
+                            "Av. Imigrantes Jundiaí SP",
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 100, 100, 100),
+                            ),
+                          ),
                         ],
                       ),
                     )
