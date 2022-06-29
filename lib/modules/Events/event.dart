@@ -3,10 +3,10 @@ import 'package:intl/intl.dart';
 import 'package:morpheus/models/event.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/image_view.dart';
-import 'package:morpheus/shared/widgets/purchase_page/see_event_ticket.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/home/favorites_events.dart';
+import '../../shared/widgets/ticket_selection/see_event_ticket.dart';
 
 class DetailScreen extends StatelessWidget {
   final AppEvent event;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:provider/provider.dart';
 
-import '../../../modules/Events/purchase_page.dart';
+import '../../../modules/Events/ticket_selection.dart';
 import '../../../providers/events/selected_tickets.dart';
 
 class SeeEventTicket extends StatelessWidget {
@@ -25,7 +25,7 @@ class SeeEventTicket extends StatelessWidget {
               builder: (context) =>
                   ChangeNotifierProvider<SelectedTicketsProvider>(
                 create: (_) => SelectedTicketsProvider(),
-                child: const PurchasePage(),
+                child: const TicketSelectionPage(),
               ),
             ),
           );

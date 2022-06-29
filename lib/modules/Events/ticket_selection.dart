@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:morpheus/providers/events/selected_tickets.dart';
+import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/events/buy_ticket.dart';
 import 'package:provider/provider.dart';
 
 import '../../models/event.dart';
+import '../../shared/widgets/ticket_selection/button_purchase_page.dart';
 
-class PurchasePage extends StatefulWidget {
-  const PurchasePage({Key? key}) : super(key: key);
+class TicketSelectionPage extends StatefulWidget {
+  const TicketSelectionPage({Key? key}) : super(key: key);
 
   @override
-  State<PurchasePage> createState() => _PurchasePageState();
+  State<TicketSelectionPage> createState() => _TicketSelectionPageState();
 }
 
-class _PurchasePageState extends State<PurchasePage> {
+class _TicketSelectionPageState extends State<TicketSelectionPage> {
   List<BuyTicket> _createCards(List<TicketOption> tickets) {
     return [];
   }
@@ -26,14 +28,19 @@ class _PurchasePageState extends State<PurchasePage> {
           onPressed: () => Navigator.pop(context),
           icon: Icon(Icons.adaptive.arrow_back_outlined),
         ),
+        title: Center(
+            child: Image.asset('images/title.png', height: 100, width: 110)),
+        backgroundColor: AppColors.primary,
       ),
       body: Consumer<SelectedTicketsProvider>(
         builder: (context, value, child) {
           return ListView(
             children: [
-              const Text(
-                'Selecionar ingressos ',
-                style: TextStyle(fontSize: 17),
+              const Center(
+                child: Text(
+                  'Selecionar ingressos ',
+                  style: TextStyle(fontSize: 20),
+                ),
               ),
               Padding(
                 padding:
@@ -65,6 +72,10 @@ class _PurchasePageState extends State<PurchasePage> {
                         ),
                       ),
                     ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(vertical: 20),
+                      child: PurchasePageButton(Textb: 'Comprar Ingressos'),
+                    )
                   ],
                 ),
               )
