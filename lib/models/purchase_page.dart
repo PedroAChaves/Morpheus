@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 import '../shared/themes/app_colors.dart';
+import '../shared/widgets/purchase_page/selected_ticket.dart';
 
 class PurchasePage extends StatefulWidget {
-  const PurchasePage({ Key? key }) : super(key: key);
+  const PurchasePage({Key? key}) : super(key: key);
 
   @override
   State<PurchasePage> createState() => _PurchasePageState();
@@ -22,11 +23,14 @@ class _PurchasePageState extends State<PurchasePage> {
             child: Image.asset('images/title.png', height: 100, width: 110)),
         backgroundColor: AppColors.primary,
       ),
-      body: Column(
-        children: [
-          
-        ],
-      )
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: const [
+            SelectedTicket(),
+          ],
+        ),
+      ),
     );
   }
 }

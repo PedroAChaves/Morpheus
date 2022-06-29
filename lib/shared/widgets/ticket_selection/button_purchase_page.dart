@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
+import 'package:provider/provider.dart';
+
+import '../../../models/purchase_page.dart';
+import '../../../providers/events/selected_tickets.dart';
 
 class PurchasePageButton extends StatelessWidget {
   final String Textb;
@@ -15,16 +19,16 @@ class PurchasePageButton extends StatelessWidget {
             backgroundColor:
                 MaterialStateProperty.all<Color>(AppColors.primary)),
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(
-          //     builder: (context) =>
-          //         ChangeNotifierProvider<SelectedTicketsProvider>(
-          //       create: (_) => SelectedTicketsProvider(),
-          //       child: const PurchasePage(),
-          //     ),
-          //   ),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) =>
+                  ChangeNotifierProvider<SelectedTicketsProvider>(
+                create: (_) => SelectedTicketsProvider(),
+                child: const PurchasePage(),
+              ),
+            ),
+          );
         },
         child: Text(
           Textb,
