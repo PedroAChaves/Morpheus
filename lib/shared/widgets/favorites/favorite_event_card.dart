@@ -68,8 +68,20 @@ class _FavoriteEventCardState extends State<FavoriteEventCard> {
                   ),
                 ),
                 IconButton(
-                    onPressed: () =>
-                        setState(() => favorites.remove(widget.event)),
+                    onPressed: () {
+                      favorites.remove(widget.event);
+                      final snackBar = SnackBar(
+                        content: const Text('Evento removido dos favoritos'),
+                        action: SnackBarAction(
+                          label: 'Desfazer',
+                          onPressed: () => favorites.save(widget.event),
+                        ),
+                      );
+
+                      // Find the ScaffoldMessenger in the widget tree
+                      // and use it to show a SnackBar.
+                      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    },
                     icon: Icon(
                       favorites.events.contains(widget.event)
                           ? Icons.star

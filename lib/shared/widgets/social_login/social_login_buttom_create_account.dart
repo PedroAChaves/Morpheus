@@ -3,8 +3,8 @@ import 'package:morpheus/modules/Home/start_page.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 
 class CreateAccountButtom extends StatelessWidget {
-  final VoidCallback onTap;
-  const CreateAccountButtom({Key? key, required this.onTap}) : super(key: key);
+  final String Textb;
+  const CreateAccountButtom({Key? key, required this.Textb}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

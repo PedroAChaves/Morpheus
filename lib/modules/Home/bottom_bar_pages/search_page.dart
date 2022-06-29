@@ -6,11 +6,13 @@ import 'package:geolocator/geolocator.dart';
 import 'package:http/http.dart' as http;
 import 'package:morpheus/models/event.dart';
 import 'package:morpheus/modules/Events/event.dart';
+import 'package:morpheus/providers/home/favorites_events.dart';
 import 'package:morpheus/providers/search/nearby_events.dart';
 import 'package:morpheus/providers/search/selected_event.dart';
 import 'package:morpheus/shared/functions/get_geo_position.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/search/country_state.dart';
+import 'package:morpheus/shared/widgets/search/map/google_map.dart';
 import 'package:morpheus/shared/widgets/search/see_events_button.dart';
 import 'package:morpheus/shared/widgets/search/state_city.dart';
 import 'package:provider/provider.dart';
@@ -29,8 +31,10 @@ class _SearchPageState extends State<SearchPage> {
   String? _selectedState;
   String? _selectedCity;
   final bool _hasSelectedEvent = false;
+  late Position currentPosition;
 
-  late NearbyEventsProvider nearbyEvents;
+  late NearbyEventsProvider nearbyEventsProvider;
+  late FavoritesAppEventsProvider favorites;
 
   Future<void> _fetchStates() async {
     final response = await http.get(
@@ -82,46 +86,9 @@ class _SearchPageState extends State<SearchPage> {
 
   Future<List<AppEvent>> _fetchNearbyEvents(double latitude, longitude) async {
     final response = await http.get(Uri.parse("http://localhost:3000/events"));
-    List<dynamic> data = jsonDecode(response.body);
-
-    List<AppEvent> events = [];
-
-    for (var event in data) {
-      events.add(
-        AppEvent(
-                event['id'].toString(),
-                event['name'],
-                EventLocation(
-                  event['location']['latitude'],
-                  event['location']['longitude'],
-                  event['id'],
-                  event['eventId'],
-                  event['street'],
-                  event['district'],
-                  event['state'],
-                  event['city'],
-                  event['number'],
-                  event['description'],
-                  event['postalCode'],
-                  event['createdAt'],
-                  event['updatedAt'],
-                ),
-                event['cover_url'],
-                event['updated_at'],
-                event['organizer_name'],
-                event['age_group'],
-                event['description'],
-                event['status'],
-                event['category'],
-                event['subject'],
-                event['created_at'],
-                event['end_date_time'],
-                event['start_date_time'],
-                event['ticket_options'],
-              ),
-      );
-    }
-
+    final value = List.from(jsonDecode(response.body));
+    List<AppEvent> events =
+        value.map<AppEvent>((e) => AppEvent.fromJson(e)).toList();
     return events;
   }
 
@@ -133,7 +100,8 @@ class _SearchPageState extends State<SearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    nearbyEvents = Provider.of<NearbyEventsProvider>(context);
+    favorites = Provider.of<FavoritesAppEventsProvider>(context);
+    nearbyEventsProvider = Provider.of<NearbyEventsProvider>(context);
 
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
@@ -147,7 +115,7 @@ class _SearchPageState extends State<SearchPage> {
                     ? MediaQuery.of(context).size.height * 0.50
                     : MediaQuery.of(context).size.height * 0.56,
                 width: double.infinity,
-                child: const Text('k'),
+                child: const SearchMap(),
               ),
               Expanded(
                 child: value.hasValue
@@ -195,10 +163,10 @@ class _SearchPageState extends State<SearchPage> {
                                     ),
                                     IconButton(
                                       onPressed: () => value.setValue(
-                                          nearbyEvents.events[nearbyEvents
-                                                  .events
-                                                  .indexOf(value.event) +
-                                              1]),
+                                          nearbyEventsProvider.events[
+                                              nearbyEventsProvider.events
+                                                      .indexOf(value.event) +
+                                                  1]),
                                       icon:
                                           const Icon(Icons.navigate_next_sharp),
                                       color: AppColors.primary,
@@ -206,10 +174,10 @@ class _SearchPageState extends State<SearchPage> {
                                     ),
                                     IconButton(
                                       onPressed: () => value.setValue(
-                                          nearbyEvents.events[nearbyEvents
-                                                  .events
-                                                  .indexOf(value.event) -
-                                              1]),
+                                          nearbyEventsProvider.events[
+                                              nearbyEventsProvider.events
+                                                      .indexOf(value.event) -
+                                                  1]),
                                       icon: const Icon(Icons.navigate_before),
                                       color: AppColors.primary,
                                       iconSize: 34,
@@ -247,10 +215,26 @@ class _SearchPageState extends State<SearchPage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    favorites.save(value.event);
+                                    final snackBar = SnackBar(
+                                      content: const Text('Evento adicionado aos favoritos'),
+                                      action: SnackBarAction(
+                                          label: 'Desfazer',
+                                          onPressed: () =>
+                                              favorites.remove(value.event)),
+                                    );
+
+                                    // Find the ScaffoldMessenger in the widget tree
+                                    // and use it to show a SnackBar.
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(snackBar);
+                                  },
                                   iconSize: 36,
-                                  icon: const Icon(
-                                    Icons.star_border,
+                                  icon: Icon(
+                                    favorites.events.contains(value.event)
+                                        ? Icons.star
+                                        : Icons.star_border,
                                     color: AppColors.accent,
                                   ),
                                 ),
@@ -319,7 +303,7 @@ class _SearchPageState extends State<SearchPage> {
                                   position.longitude,
                                 );
 
-                                nearbyEvents.saveAll(events);
+                                nearbyEventsProvider.saveAll(events);
                               },
                             ),
                             Row(
@@ -338,7 +322,7 @@ class _SearchPageState extends State<SearchPage> {
                                     icon: const Icon(Icons.arrow_downward),
                                     menuMaxHeight: 400,
                                     value: _selectedState,
-                                    isExpanded: true,                                    
+                                    isExpanded: true,
                                     elevation: 16,
                                     style: const TextStyle(
                                       color: AppColors.primary,

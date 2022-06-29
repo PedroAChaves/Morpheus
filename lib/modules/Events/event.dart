@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:morpheus/models/event.dart';
-import 'package:morpheus/modules/Events/purchase_page.dart';
-import 'package:morpheus/providers/events/selected_tickets.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
+import 'package:morpheus/shared/widgets/image_view.dart';
+import 'package:morpheus/shared/widgets/purchase_page/see_event_ticket.dart';
 import 'package:provider/provider.dart';
 
 import '../../providers/home/favorites_events.dart';
-import '../../shared/widgets/profile/account_button.dart';
 
 class DetailScreen extends StatelessWidget {
   final AppEvent event;
@@ -36,23 +35,38 @@ class DetailScreen extends StatelessWidget {
               child: Image.asset('images/title.png', height: 100, width: 110),
             ),
             pinned: true,
-            flexibleSpace: FlexibleSpaceBar(
-              centerTitle: true,
-              stretchModes: const [
-                StretchMode.zoomBackground,
-                StretchMode.fadeTitle
-              ],
-              background: Stack(
-                fit: StackFit.expand,
-                children: [
-                  Hero(
-                    tag: event.id,
-                    child: Image.network(
-                      event.coverUrl,
-                      fit: BoxFit.cover,
-                    ),
+            flexibleSpace: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return AvatarView(
+                        avatarUrl: event.coverUrl,
+                        heroTag: event.id,
+                      );
+                    },
                   ),
+                );
+              },
+              child: FlexibleSpaceBar(
+                centerTitle: true,
+                stretchModes: const [
+                  StretchMode.zoomBackground,
+                  StretchMode.fadeTitle
                 ],
+                background: Stack(
+                  fit: StackFit.expand,
+                  children: [
+                    Hero(
+                      tag: event.id,
+                      child: Image.network(
+                        event.coverUrl,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
@@ -289,82 +303,10 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ChangeNotifierProvider<SelectedTicketsProvider>(
-                            create: (_) => SelectedTicketsProvider(),
-                            child: const PurchasePage(),
-                          ),
-                        ),
-                      );
-                    },
-                    child: const AccountButton(
-                      icon: Icon(Icons.bookmark_added_outlined),
-                      text: Text(
-                        "Ver Ingressos",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      pagePath: "",
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ChangeNotifierProvider<SelectedTicketsProvider>(
-                            create: (_) => SelectedTicketsProvider(),
-                            child: const PurchasePage(),
-                          ),
-                        ),
-                      );
-                    },
-                    child: const AccountButton(
-                      icon: Icon(Icons.bookmark_added_outlined),
-                      text: Text(
-                        "Ver Ingressos",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      pagePath: "",
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              ChangeNotifierProvider<SelectedTicketsProvider>(
-                            create: (_) => SelectedTicketsProvider(),
-                            child: const PurchasePage(),
-                          ),
-                        ),
-                      );
-                    },
-                    child: const AccountButton(
-                      icon: Icon(Icons.bookmark_added_outlined),
-                      text: Text(
-                        "Ver Ingressos",
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      pagePath: "",
-                    ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: SeeEventTicket(
+                    Textb: 'Ver ingressos',
                   ),
                 ),
               ],

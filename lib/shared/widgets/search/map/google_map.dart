@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:morpheus/models/event.dart';
@@ -8,7 +9,9 @@ import 'package:provider/provider.dart';
 class SearchMap extends StatefulWidget {
   @override
   State<SearchMap> createState() => SearchMapState();
-  const SearchMap({Key? key}) : super(key: key);
+  final double? initialLatitude;
+  final double? initialLongitude;
+  const SearchMap({Key? key, this.initialLatitude, this.initialLongitude}) : super(key: key);
 }
 
 class SearchMapState extends State<SearchMap> {
@@ -37,8 +40,8 @@ class SearchMapState extends State<SearchMap> {
         return GoogleMap(
           markers: Set<Marker>.of(_createMarkers(value.events)),
           mapType: MapType.normal,
-          initialCameraPosition: const CameraPosition(
-            target: LatLng(-23.168630524718026, -46.868967544506795),
+          initialCameraPosition: CameraPosition(
+            target: LatLng(widget.initialLatitude ?? -23.1889985228543, widget.initialLongitude ?? -46.8865940264918),
             zoom: 13,
           ),
         );

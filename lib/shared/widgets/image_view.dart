@@ -4,7 +4,8 @@ import 'package:photo_view/photo_view.dart';
 
 class AvatarView extends StatelessWidget {
   final String avatarUrl;
-  const AvatarView({Key? key, required this.avatarUrl}) : super(key: key);
+  final String? heroTag;
+  const AvatarView({Key? key, required this.avatarUrl, this.heroTag}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class AvatarView extends StatelessWidget {
           children: [
             PhotoView(
               imageProvider: NetworkImage(avatarUrl),
-              heroAttributes: PhotoViewHeroAttributes(tag: avatarUrl),
+              heroAttributes: PhotoViewHeroAttributes(tag: heroTag != null ? heroTag as String : avatarUrl),
             ),
             IconButton(
               onPressed: () => Navigator.pop(context),

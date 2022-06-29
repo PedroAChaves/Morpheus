@@ -91,7 +91,21 @@ class _EventCardState extends State<EventCard> {
                         ),
                       ),
                       IconButton(
-                        onPressed: () => favorites.save(widget.event),
+                        onPressed: () {
+                          favorites.save(widget.event);
+                          final snackBar = SnackBar(
+                            content:
+                                const Text('Evento adicionado aos favoritos'),
+                            action: SnackBarAction(
+                                label: 'Desfazer',
+                                onPressed: () =>
+                                    favorites.remove(widget.event)),
+                          );
+
+                          // Find the ScaffoldMessenger in the widget tree
+                          // and use it to show a SnackBar.
+                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                        },
                         icon: Icon(
                           favorites.events.contains(widget.event)
                               ? Icons.star
