@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'package:morpheus/modules/Home/start_page.dart';
 import 'package:morpheus/providers/home/favorites_events.dart';
 import 'package:provider/provider.dart';
-
-import 'modules/Home/start_page.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

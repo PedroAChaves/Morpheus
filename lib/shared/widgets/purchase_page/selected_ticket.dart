@@ -6,10 +6,9 @@ class SelectedTicket extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 130,
+      height: double.maxFinite,
       width: double.maxFinite,
-      margin: const EdgeInsets.all(30),
-      // padding: const EdgeInsets.all(20),
+      // margin: const EdgeInsets.all(30),
       decoration: BoxDecoration(
         color: Colors.yellow,
         border: Border.all(color: Colors.black),
