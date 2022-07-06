@@ -1,29 +1,29 @@
-// import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import '../../themes/app_colors.dart';
 
-// import '../../themes/app_colors.dart';
+class TextFieldWidget extends StatefulWidget {
+  final String title;
+  const TextFieldWidget({Key? key, required this.title}) : super(key: key);
 
-// class TextField extends StatefulWidget {
-//   const TextField({Key? key}) : super(key: key);
+  @override
+  State<TextFieldWidget> createState() => _TextFieldWidgetState();
+}
 
-//   @override
-//   State<TextField> createState() => _TextFieldState();
-// }
-
-// class _TextFieldState extends State<TextField> {
-//   @override
-//   Widget build(BuildContext context) {
-//     return TextField(
-//       // cursorColor: AppColors.primary,
-//       decoration: InputDecoration(
-//         focusedBorder: OutlineInputBorder(
-//           borderSide: BorderSide(color: AppColors.primary, width: 2),
-//         ),
-//         border: const OutlineInputBorder(),
-//         labelText: 'Email',
-//         floatingLabelStyle: TextStyle(color: AppColors.primary),
-//         fillColor: Colors.white,
-//         filled: true,
-//       ),
-//     );
-//   }
-// }
+class _TextFieldWidgetState extends State<TextFieldWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      cursorColor: AppColors.primary,
+      decoration: InputDecoration(
+        focusedBorder: const OutlineInputBorder(
+          borderSide: BorderSide(color: AppColors.primary, width: 2),
+        ),
+        border: const OutlineInputBorder(),
+        labelText: widget.title,
+        floatingLabelStyle: const TextStyle(color: AppColors.primary),
+        fillColor: Colors.transparent,
+        filled: true,
+      ),
+    );
+  }
+}
