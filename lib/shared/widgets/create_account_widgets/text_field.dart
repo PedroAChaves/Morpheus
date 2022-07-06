@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
 import '../../themes/app_colors.dart';
 
-class TextFieldWidget extends StatefulWidget {
-  final String title;
-  const TextFieldWidget({Key? key, required this.title}) : super(key: key);
-
-  @override
-  State<TextFieldWidget> createState() => _TextFieldWidgetState();
-}
-
-class _TextFieldWidgetState extends State<TextFieldWidget> {
+class CustomFormField extends StatelessWidget {
+  const CustomFormField({
+    Key? key,
+    this.inputFormatters,
+    this.validator,
+  }) : super(key: key);
+  final List<TextInputFormatter>? inputFormatters;
+  final String? Function(String?)? validator;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      cursorColor: AppColors.primary,
-      decoration: InputDecoration(
-        focusedBorder: const OutlineInputBorder(
+      inputFormatters: inputFormatters,
+      validator: validator,
+      decoration: const InputDecoration(
+        focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: AppColors.primary, width: 2),
         ),
-        border: const OutlineInputBorder(),
-        labelText: widget.title,
-        floatingLabelStyle: const TextStyle(color: AppColors.primary),
+        border: OutlineInputBorder(),
+        labelText: 'Informe seu nome',
+        floatingLabelStyle: TextStyle(color: AppColors.primary),
         fillColor: Colors.transparent,
         filled: true,
       ),
