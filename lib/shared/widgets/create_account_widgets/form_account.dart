@@ -1,5 +1,8 @@
-import 'package:dob_input_field/dob_input_field.dart';
+import 'dart:html';
+
+import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:morpheus/shared/widgets/create_account_widgets/text_field.dart';
 
 import '../../themes/app_colors.dart';
@@ -30,8 +33,7 @@ extension extString on String {
   }
 
   bool get isValidPassword {
-    final passwordRegExp = RegExp(
-        r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\><*~]).{8,}/pre>');
+    final passwordRegExp = RegExp(r'(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)');
     return passwordRegExp.hasMatch(this);
   }
 
@@ -39,8 +41,14 @@ extension extString on String {
     return this != null;
   }
 
+  bool get isValidBirthDate {
+    final passwordRegExp = RegExp(
+        r'^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$');
+    return passwordRegExp.hasMatch(this);
+  }
+
   bool get isValidPhone {
-    final phoneRegExp = RegExp(r"^\+?0[0-9]{10}$");
+    final phoneRegExp = RegExp(r"(^[0-9]*$)");
     return phoneRegExp.hasMatch(this);
   }
 }
@@ -81,8 +89,6 @@ class _FormPageState extends State<FormPage> {
                   validator: (String? val) {
                     if (val?.isValidName == false) {
                       return 'Digite um nome válido';
-                    } else if (val == null || val.isEmpty) {
-                      return 'É preciso preencher este campo';
                     }
                     return null;
                   },
@@ -112,8 +118,6 @@ class _FormPageState extends State<FormPage> {
                   validator: (String? val) {
                     if (val?.isValidLastName == false) {
                       return 'Digite um sobrenome válido';
-                    } else if (val == null || val.isEmpty) {
-                      return 'É preciso preencher este campo';
                     }
                     return null;
                   },
@@ -143,8 +147,6 @@ class _FormPageState extends State<FormPage> {
                   validator: (String? val) {
                     if (val?.isValidEmail == false) {
                       return 'Digite um Email válido';
-                    } else if (val == null || val.isEmpty) {
-                      return 'É preciso preencher este campo';
                     }
                     return null;
                   },
@@ -174,9 +176,9 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'É preciso preencher este campo';
+                  validator: (String? val) {
+                    if (val?.isValidPassword == false) {
+                      return 'Digite uma Senha válida';
                     }
                     return null;
                   },
@@ -203,9 +205,9 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
-                      return 'É preciso preencher este campo';
+                  validator: (String? val) {
+                    if (val?.isValidPhone == false) {
+                      return 'Digite um número válido';
                     }
                     return null;
                   },
@@ -220,6 +222,10 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    CpfInputFormatter(),
+                  ],
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -299,10 +305,29 @@ class _FormPageState extends State<FormPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
-                child: DOBInputField(
-                  firstDate: DateTime(1900),
-                  lastDate: DateTime.now(),
-                  autovalidateMode: AutovalidateMode.disabled,
+                child: TextFormField(
+                  // inputFormatters: [
+                  //   // FilteringTextInputFormatter.digitsOnly,
+                  //   // DateInputElement()
+                  // ],
+                  cursorColor: AppColors.primary,
+                  decoration: const InputDecoration(
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: AppColors.primary, width: 2),
+                    ),
+                    border: OutlineInputBorder(),
+                    labelText: 'Informe seu CPF',
+                    floatingLabelStyle: TextStyle(color: AppColors.primary),
+                    fillColor: Colors.transparent,
+                    filled: true,
+                  ),
+                  validator: (String? val) {
+                    if (val?.isValidBirthDate == false) {
+                      return 'Digite uma data válida';
+                    }
+                    return null;
+                  },
                 ),
               ),
 
