@@ -24,6 +24,11 @@ extension extString on String {
     return nameRegExp.hasMatch(this);
   }
 
+  bool get isValidLastName {
+    final nameRegExp = RegExp(r"^\s*([A-Za-z]{1,}([\.,]|[-']|))");
+    return nameRegExp.hasMatch(this);
+  }
+
   bool get isValidPassword {
     final passwordRegExp = RegExp(
         r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\><*~]).{8,}/pre>');
@@ -74,7 +79,11 @@ class _FormPageState extends State<FormPage> {
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: CustomFormField(
                   validator: (String? val) {
-                    if (val?.isValidName == false) return 'Enter valid name';
+                    if (val?.isValidName == false) {
+                      return 'Digite um nome válido';
+                    } else if (val == null || val.isEmpty) {
+                      return 'É preciso preencher este campo';
+                    }
                     return null;
                   },
                 ),
@@ -100,8 +109,10 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
+                  validator: (String? val) {
+                    if (val?.isValidLastName == false) {
+                      return 'Digite um sobrenome válido';
+                    } else if (val == null || val.isEmpty) {
                       return 'É preciso preencher este campo';
                     }
                     return null;
@@ -129,8 +140,10 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  validator: (String? value) {
-                    if (value == null || value.isEmpty) {
+                  validator: (String? val) {
+                    if (val?.isValidEmail == false) {
+                      return 'Digite um Email válido';
+                    } else if (val == null || val.isEmpty) {
                       return 'É preciso preencher este campo';
                     }
                     return null;
