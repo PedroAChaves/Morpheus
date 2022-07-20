@@ -55,6 +55,7 @@ extension extString on String {
 }
 
 class _FormPageState extends State<FormPage> {
+  bool _ShowPassword = false;
   SingingCharacter? _character = SingingCharacter.Masculino;
   final formKey = GlobalKey<FormState>();
   final _UserName = TextEditingController();
@@ -166,17 +167,29 @@ class _FormPageState extends State<FormPage> {
                 child: TextFormField(
                   controller: _UserPassword,
                   cursorColor: AppColors.primary,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                    focusedBorder: OutlineInputBorder(
+                  obscureText: _ShowPassword == false ? true : false,
+                  decoration: InputDecoration(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide:
                           BorderSide(color: AppColors.primary, width: 2),
                     ),
-                    suffixIcon: Icon(Icons.remove_red_eye_outlined,
-                        color: Color(0xFF20202c)),
-                    border: OutlineInputBorder(),
+                    suffixIcon: GestureDetector(
+                      child: Icon(
+                        _ShowPassword == false
+                            ? Icons.visibility_off_outlined
+                            : Icons.remove_red_eye_outlined,
+                        color: const Color(0xFF20202c),
+                      ),
+                      onTap: () {
+                        setState(() {
+                          _ShowPassword = !_ShowPassword;
+                        });
+                      },
+                    ),
+                    border: const OutlineInputBorder(),
                     labelText: 'Informe sua Senha',
-                    floatingLabelStyle: TextStyle(color: AppColors.primary),
+                    floatingLabelStyle:
+                        const TextStyle(color: AppColors.primary),
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
@@ -198,6 +211,10 @@ class _FormPageState extends State<FormPage> {
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
                   controller: _UserPhone,
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    TelefoneInputFormatter(),
+                  ],
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -210,12 +227,12 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  validator: (String? val) {
-                    if (val?.isValidPhone == false) {
-                      return 'Digite um número válido';
-                    }
-                    return null;
-                  },
+                  // validator: (String? val) {
+                  //   if (val?.isValidPhone == false) {
+                  //     return 'Digite um número válido';
+                  //   }
+                  //   return null;
+                  // },
                 ),
               ),
 
@@ -313,10 +330,10 @@ class _FormPageState extends State<FormPage> {
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
                   controller: _UserBirthDate,
-                  // inputFormatters: [
-                  //   // FilteringTextInputFormatter.digitsOnly,
-                  //   // DateInputElement()
-                  // ],
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    DataInputFormatter(),
+                  ],
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
