@@ -1,16 +1,17 @@
-import 'dart:html';
-
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:morpheus/shared/widgets/create_account_widgets/text_field.dart';
 
 import '../../themes/app_colors.dart';
 
 enum SingingCharacter { Masculino, Feminino, Outro }
 
 class FormPage extends StatefulWidget {
-  const FormPage({Key? key}) : super(key: key);
+  // final User user;
+  const FormPage({
+    Key? key,
+    // required this.user
+  }) : super(key: key);
 
   @override
   State<FormPage> createState() => _FormPageState();
@@ -42,9 +43,9 @@ extension extString on String {
   }
 
   bool get isValidBirthDate {
-    final passwordRegExp = RegExp(
+    final birthdateRegExp = RegExp(
         r'^(?:0[1-9]|[12]\d|3[01])([\/.-])(?:0[1-9]|1[012])\1(?:19|20)\d\d$');
-    return passwordRegExp.hasMatch(this);
+    return birthdateRegExp.hasMatch(this);
   }
 
   bool get isValidPhone {
@@ -56,6 +57,23 @@ extension extString on String {
 class _FormPageState extends State<FormPage> {
   SingingCharacter? _character = SingingCharacter.Masculino;
   final formKey = GlobalKey<FormState>();
+  final _UserName = TextEditingController();
+  final _UserEmail = TextEditingController();
+  final _UserPassword = TextEditingController();
+  final _UserPhone = TextEditingController();
+  final _UserCPF = TextEditingController();
+  final _UserGender = TextEditingController();
+  final _UserBirthDate = TextEditingController();
+  final _UserAvatar = TextEditingController();
+
+  String name = '';
+  String email = '';
+  String password = '';
+  String phone = '';
+  String cpf = '';
+  String gender = '';
+  String birthdate = '';
+  String avatar = '';
 
   @override
   Widget build(BuildContext context) {
@@ -85,24 +103,8 @@ class _FormPageState extends State<FormPage> {
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
-                child: CustomFormField(
-                  validator: (String? val) {
-                    if (val?.isValidName == false) {
-                      return 'Digite um nome válido';
-                    }
-                    return null;
-                  },
-                ),
-              ),
-
-              //SOBRENOME
-              const Padding(
-                padding: EdgeInsets.only(left: 20, top: 25),
-                child: Text('Sobrenome:', style: TextStyle(fontSize: 20)),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserName,
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -110,14 +112,14 @@ class _FormPageState extends State<FormPage> {
                           BorderSide(color: AppColors.primary, width: 2),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'Informe seu sobrenome',
+                    labelText: 'Informe seu nome completo',
                     floatingLabelStyle: TextStyle(color: AppColors.primary),
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
                   validator: (String? val) {
-                    if (val?.isValidLastName == false) {
-                      return 'Digite um sobrenome válido';
+                    if (val?.isValidName == false) {
+                      return 'Digite um nome válido';
                     }
                     return null;
                   },
@@ -132,6 +134,7 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserEmail,
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -161,6 +164,7 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserPassword,
                   cursorColor: AppColors.primary,
                   obscureText: true,
                   decoration: const InputDecoration(
@@ -193,6 +197,7 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserPhone,
                   cursorColor: AppColors.primary,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
@@ -222,6 +227,7 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserCPF,
                   inputFormatters: [
                     FilteringTextInputFormatter.digitsOnly,
                     CpfInputFormatter(),
@@ -306,6 +312,7 @@ class _FormPageState extends State<FormPage> {
               Padding(
                 padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
                 child: TextFormField(
+                  controller: _UserBirthDate,
                   // inputFormatters: [
                   //   // FilteringTextInputFormatter.digitsOnly,
                   //   // DateInputElement()
@@ -317,7 +324,7 @@ class _FormPageState extends State<FormPage> {
                           BorderSide(color: AppColors.primary, width: 2),
                     ),
                     border: OutlineInputBorder(),
-                    labelText: 'Informe seu CPF',
+                    labelText: 'Informe sua data de nascimento',
                     floatingLabelStyle: TextStyle(color: AppColors.primary),
                     fillColor: Colors.transparent,
                     filled: true,
@@ -337,12 +344,13 @@ class _FormPageState extends State<FormPage> {
                 child: Text('Insira o link de uma foto:',
                     style: TextStyle(fontSize: 20)),
               ),
-              const Padding(
-                padding: EdgeInsets.only(left: 20, top: 15, right: 20),
-                child: TextField(
+              Padding(
+                padding: const EdgeInsets.only(left: 20, top: 15, right: 20),
+                child: TextFormField(
+                  controller: _UserAvatar,
                   cursorColor: AppColors.primary,
                   obscureText: true,
-                  decoration: InputDecoration(
+                  decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide:
                           BorderSide(color: AppColors.primary, width: 2),
@@ -373,6 +381,18 @@ class _FormPageState extends State<FormPage> {
                       //       builder: (context) => const StartPage()),
                       // );
                       formKey.currentState?.validate();
+                      name = _UserName.text;
+                      email = _UserEmail.text;
+                      password = _UserPassword.text;
+                      phone = _UserPhone.text;
+                      cpf = _UserCPF.text;
+                      avatar = _UserAvatar.text;
+                      print(name);
+                      print(email);
+                      print(password);
+                      print(phone);
+                      print(cpf);
+                      print(avatar);
                     },
                     child: const Text(
                       "Continuar",
