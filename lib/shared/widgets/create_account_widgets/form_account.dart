@@ -23,6 +23,12 @@ extension extString on String {
     return emailRegExp.hasMatch(this);
   }
 
+  // bool get isValidURL {
+  //   final urlRegExp = RegExp(
+  //       r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?");
+  //   return urlRegExp.hasMatch(this);
+  // }
+
   bool get isValidName {
     final nameRegExp = RegExp(r"^\s*([A-Za-z]{1,}([\.,]|[-']|))");
     return nameRegExp.hasMatch(this);
@@ -72,7 +78,6 @@ class _FormPageState extends State<FormPage> {
   String password = '';
   String phone = '';
   String cpf = '';
-  String gender = '';
   String birthdate = '';
   String avatar = '';
 
@@ -227,12 +232,12 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
-                  // validator: (String? val) {
-                  //   if (val?.isValidPhone == false) {
-                  //     return 'Digite um número válido';
-                  //   }
-                  //   return null;
-                  // },
+                  validator: (String? value) {
+                    if (value == null || value.isEmpty) {
+                      return 'É preciso preencher este campo';
+                    }
+                    return null;
+                  },
                 ),
               ),
 
@@ -366,7 +371,6 @@ class _FormPageState extends State<FormPage> {
                 child: TextFormField(
                   controller: _UserAvatar,
                   cursorColor: AppColors.primary,
-                  obscureText: true,
                   decoration: const InputDecoration(
                     focusedBorder: OutlineInputBorder(
                       borderSide:
@@ -378,6 +382,12 @@ class _FormPageState extends State<FormPage> {
                     fillColor: Colors.transparent,
                     filled: true,
                   ),
+                  // validator: (String? val) {
+                  //   if (val?.isValidURL == false) {
+                  //     return 'Digite um link válido';
+                  //   }
+                  //   return null;
+                  // },
                 ),
               ),
 
@@ -410,6 +420,7 @@ class _FormPageState extends State<FormPage> {
                       print(phone);
                       print(cpf);
                       print(avatar);
+                      print(_character);
                     },
                     child: const Text(
                       "Continuar",
