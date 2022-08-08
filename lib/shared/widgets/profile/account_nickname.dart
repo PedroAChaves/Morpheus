@@ -7,7 +7,7 @@ import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/image_view.dart';
 
 class NicknamePage extends StatefulWidget {
-  final String? accountAvatarUrl;
+  final String accountAvatarUrl;
   final String accountName;
   final String accountEmail;
 
@@ -27,9 +27,10 @@ class _NicknamePageState extends State<NicknamePage> {
   Widget build(BuildContext context) {
     List<String> names = widget.accountName.split(' ');
     final String _initials = names.first.split('')[0] + names.last.split('')[0];
+  
 
     late PlatformFile file;
-    String avatarUrl  ="";
+    String avatarUrl  = widget.accountAvatarUrl;
     String pickImgUrl =
         "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png";
 
@@ -58,6 +59,7 @@ class _NicknamePageState extends State<NicknamePage> {
       final response = await request.send();
       var result = jsonDecode(await response.stream.bytesToString());
       setState(() => avatarUrl = result['file_url']);
+       imageCache?.clear();
       print(avatarUrl);
     }
 
@@ -66,12 +68,11 @@ class _NicknamePageState extends State<NicknamePage> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           InkWell(onTap: (){
-              print("nao entrou");
                Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) {
-                            return AvatarView(avatarUrl: avatarUrl.isEmpty ? widget.accountAvatarUrl as String : avatarUrl);
+                            return AvatarView(avatarUrl: avatarUrl);
                           },
                         ),
                       );
@@ -95,7 +96,7 @@ class _NicknamePageState extends State<NicknamePage> {
                           child: const Text("Escolher nova imagem"),
                         ),
                         const Spacer(),
-                        Image.network(avatarUrl, height: 200),
+                        Image.network(pickImgUrl, height: 50),
                         const Spacer(),
                         TextButton(
                           onPressed: () => _uploadAvatarFile(),
@@ -109,11 +110,10 @@ class _NicknamePageState extends State<NicknamePage> {
             );
           }, child: Builder(builder: (BuildContext build) {
             return Hero(
-              tag: widget.accountAvatarUrl as String,
+              tag: avatarUrl,
               child: CircleAvatar(
                 backgroundColor: AppColors.primary,
-                foregroundImage:
-                    widget.accountAvatarUrl == null ? null : NetworkImage(avatarUrl.isEmpty ? widget.accountAvatarUrl as String : avatarUrl),
+                foregroundImage: NetworkImage(avatarUrl),
                 child: Text(
                   _initials,
                   style: const TextStyle(

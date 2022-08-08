@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:morpheus/models/user.dart';
 
 import '../../shared/widgets/create_account_widgets/form_account.dart';
 
 class CreateAccount extends StatefulWidget {
-  const CreateAccount({Key? key}) : super(key: key);
+  // final AppUser user;
+  const CreateAccount({Key? key, }) : super(key: key);
 
   @override
   State<CreateAccount> createState() => _CreateAccountState();

@@ -47,23 +47,23 @@ class _TicketSelectionPageState extends State<TicketSelectionPage> {
                     const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
-                    BuyTicket(
+                  children: [
+                    const BuyTicket(
                       type: 'Pista ',
                       lot: '3° lote',
                       price: 75.00,
                     ),
-                    BuyTicket(
+                    const BuyTicket(
                       type: 'VIP ',
                       lot: '2° lote',
                       price: 120.00,
                     ),
-                    BuyTicket(
+                    const BuyTicket(
                       type: 'Camarote ',
                       lot: '1° lote',
                       price: 200.00,
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: Text(
                         'Subtotal: R\$ ' '',
@@ -72,10 +72,11 @@ class _TicketSelectionPageState extends State<TicketSelectionPage> {
                         ),
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(vertical: 20),
                       child: PurchasePageButton(Textb: 'Comprar Ingressos'),
-                    )
+                    ),
+                    Image.asset('images/pay_types.png'),
                   ],
                 ),
               )

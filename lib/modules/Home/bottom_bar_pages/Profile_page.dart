@@ -1,8 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:morpheus/models/user.dart';
 import 'package:morpheus/shared/widgets/profile/account_buttons_list.dart';
 import 'package:morpheus/shared/widgets/profile/account_nickname.dart';
 import 'package:morpheus/shared/widgets/profile/button_edit.dart';
-import 'package:morpheus/shared/widgets/profile/button_sign_out.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -12,6 +15,27 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  late AppUser account;
+
+  Future<void> _fetch() async {
+    try {
+      var response =
+          await http.get(Uri.parse('http://localhost:3000/accounts'));
+      setState(() {
+        // account = AppUser.fromJson(jsonDecode(response.body));
+        // print(account);
+      });
+    } catch (err) {
+      print(err);
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _fetch();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,15 +86,6 @@ class _ProfilePageState extends State<ProfilePage> {
               const Padding(
                 padding: EdgeInsets.only(top: 26),
                 child: AccountsButtonList(),
-              ),
-              const Spacer(),
-              Padding(
-                padding: const EdgeInsets.only(top: 26),
-                child: Row(
-                  children: const [
-                    ButtonSignOut(),
-                  ],
-                ),
               ),
             ],
           ),

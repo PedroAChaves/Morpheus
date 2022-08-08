@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:morpheus/modules/Home/start_page.dart';
-import 'package:morpheus/modules/Login/create_account.dart';
+import 'package:morpheus/models/purchase_page.dart';
 import 'package:morpheus/providers/home/favorites_events.dart';
 import 'package:provider/provider.dart';
 
@@ -33,7 +32,7 @@ class App extends StatelessWidget {
       theme: ThemeData(),
       darkTheme: ThemeData(backgroundColor: const Color.fromARGB(0, 0, 0, 0)),
       themeMode: ThemeMode.dark,
-      home: const CreateAccount(),
+      home: const PurchasePage(),
     );
   }
 }

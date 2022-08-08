@@ -11,11 +11,6 @@ class AccountsButtonList extends StatelessWidget {
         runSpacing: 8,
         children: const [
           AccountButton(
-            icon: Icon(Icons.lock_open_outlined),
-            text: Text("Alterar senha"),
-            pagePath: "pagePath",
-          ),
-          AccountButton(
             icon: Icon(Icons.add_to_photos_outlined),
             text: Text("Criar um evento"),
             pagePath: "pagePath",
@@ -28,11 +23,6 @@ class AccountsButtonList extends StatelessWidget {
           AccountButton(
             icon: Icon(Icons.check_circle_outlined),
             text: Text("Verificar ingressos"),
-            pagePath: "pagePath",
-          ),
-          AccountButton(
-            icon: Icon(Icons.analytics_outlined),
-            text: Text("Dados analíticos"),
             pagePath: "pagePath",
           ),
           AccountButton(

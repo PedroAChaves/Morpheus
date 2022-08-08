@@ -239,7 +239,7 @@ class DetailScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontFamily: 'Nunito',
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
                     ),
@@ -253,7 +253,7 @@ class DetailScreen extends StatelessWidget {
                     textAlign: TextAlign.start,
                     style: TextStyle(
                       fontFamily: 'Nunito',
-                      fontSize: 13,
+                      fontSize: 18,
                       fontWeight: FontWeight.w700,
                       color: Colors.black,
                     ),

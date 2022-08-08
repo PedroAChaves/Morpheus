@@ -2,16 +2,14 @@ import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import '../../../models/user.dart';
 import '../../themes/app_colors.dart';
 
 enum SingingCharacter { Masculino, Feminino, Outro }
 
 class FormPage extends StatefulWidget {
-  // final User user;
-  const FormPage({
-    Key? key,
-    // required this.user
-  }) : super(key: key);
+  // final AppUser user;
+  const FormPage({Key? key, }) : super(key: key);
 
   @override
   State<FormPage> createState() => _FormPageState();
@@ -76,8 +74,8 @@ class _FormPageState extends State<FormPage> {
   String name = '';
   String email = '';
   String password = '';
-  String phone = '';
-  String cpf = '';
+  double phone = 0;
+  double cpf = 0;
   String birthdate = '';
   String avatar = '';
 
@@ -411,9 +409,13 @@ class _FormPageState extends State<FormPage> {
                       name = _UserName.text;
                       email = _UserEmail.text;
                       password = _UserPassword.text;
-                      phone = _UserPhone.text;
-                      cpf = _UserCPF.text;
+                      // phone = _UserPhone.text;
+                      // cpf = _UserCPF.text;
                       avatar = _UserAvatar.text;
+                      // widget.user.name = name;
+                      // widget.user.avatar_url = avatar;
+                      // widget.user.document = cpf;
+                      // widget.user.email = email;
                       print(name);
                       print(email);
                       print(password);
