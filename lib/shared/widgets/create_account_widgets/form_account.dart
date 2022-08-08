@@ -9,7 +9,9 @@ enum SingingCharacter { Masculino, Feminino, Outro }
 
 class FormPage extends StatefulWidget {
   // final AppUser user;
-  const FormPage({Key? key, }) : super(key: key);
+  const FormPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<FormPage> createState() => _FormPageState();
@@ -289,9 +291,11 @@ class _FormPageState extends State<FormPage> {
                         value: SingingCharacter.Masculino,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
-                          setState(() {
-                            _character = value;
-                          });
+                          setState(
+                            () {
+                              _character = value;
+                            },
+                          );
                         },
                       ),
                     ),
@@ -301,9 +305,11 @@ class _FormPageState extends State<FormPage> {
                         value: SingingCharacter.Feminino,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
-                          setState(() {
-                            _character = value;
-                          });
+                          setState(
+                            () {
+                              _character = value;
+                            },
+                          );
                         },
                       ),
                     ),
@@ -313,9 +319,11 @@ class _FormPageState extends State<FormPage> {
                         value: SingingCharacter.Outro,
                         groupValue: _character,
                         onChanged: (SingingCharacter? value) {
-                          setState(() {
-                            _character = value;
-                          });
+                          setState(
+                            () {
+                              _character = value;
+                            },
+                          );
                         },
                       ),
                     ),

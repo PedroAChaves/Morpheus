@@ -20,12 +20,17 @@ class _PurchasePageState extends State<PurchasePage> {
           icon: Icon(Icons.adaptive.arrow_back_outlined),
         ),
         title: Center(
-            child: Image.asset('images/title.png', height: 100, width: 110)),
+          child: Image.asset('images/title.png', height: 100, width: 110),
+        ),
         backgroundColor: AppColors.primary,
       ),
-      body: const Padding(
-        padding: EdgeInsets.all(20),
-        child: TicketInformations(),
+      body: ListView(
+        children: const [
+          Padding(
+            padding: EdgeInsets.all(20),
+            child: TicketInformations(),
+          ),
+        ],
       ),
     );
   }
