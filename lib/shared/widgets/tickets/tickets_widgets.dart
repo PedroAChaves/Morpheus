@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../../../models/event.dart';
+
 class BougthTickets extends StatefulWidget {
   final String title;
   final String organizerName;
   final DateTime startDateTime;
+  final AppEvent event;
 
   const BougthTickets({
     Key? key,
     required this.title,
     required this.organizerName,
     required this.startDateTime,
+    required this.event,
   }) : super(key: key);
 
   @override
@@ -45,12 +49,11 @@ class _BougthTicketsState extends State<BougthTickets> {
         child: Row(
           children: [
             SizedBox(
-              height: 130,
-              width: 160,
-              child: Image.asset(
-                'images/events/festaGlow.png',
+              height: 80,
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Image.network(
+                widget.event.coverUrl,
                 fit: BoxFit.cover,
-                scale: 1,
               ),
             ),
             Container(
@@ -80,7 +83,7 @@ class _BougthTicketsState extends State<BougthTickets> {
                       widget.organizerName,
                       style: const TextStyle(fontSize: 16),
                     ),
-                  )
+                  ),
                 ],
               ),
             )

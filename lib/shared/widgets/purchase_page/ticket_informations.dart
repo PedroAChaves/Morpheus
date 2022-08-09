@@ -1,10 +1,14 @@
 import 'package:brasil_fields/brasil_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:morpheus/modules/Home/start_page.dart';
 import 'package:morpheus/shared/widgets/purchase_page/participant_information.dart';
 import 'package:morpheus/shared/widgets/purchase_page/selected_ticket.dart';
+import 'package:provider/provider.dart';
 
+import '../../../providers/events/selected_tickets.dart';
 import '../../themes/app_colors.dart';
+import '../ticket_selection/standard_button.dart';
 import 'cardholder.dart';
 import 'editable_text_field.dart';
 
@@ -123,6 +127,50 @@ class _TicketInformationsState extends State<TicketInformations> {
             ],
           ),
         ),
+        Card(
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              color: Colors.grey,
+            ),
+            borderRadius: BorderRadius.circular(7.0), //<-- SEE HERE
+          ),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.radio_button_off_outlined),
+              ),
+              const Text(
+                '2x de R\$ 20,00',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Card(
+          shape: RoundedRectangleBorder(
+            side: const BorderSide(
+              color: Colors.grey,
+            ),
+            borderRadius: BorderRadius.circular(7.0), //<-- SEE HERE
+          ),
+          child: Row(
+            children: [
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.radio_button_off_outlined),
+              ),
+              const Text(
+                '3x de R\$ 13,33',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            ],
+          ),
+        ),
         const Padding(
           padding: EdgeInsets.only(top: 15, bottom: 10),
           child: Text(
@@ -198,7 +246,20 @@ class _TicketInformationsState extends State<TicketInformations> {
             ),
           ),
         ),
-        const Cardholder()
+        const Cardholder(),
+        Padding(
+          padding: const EdgeInsets.only(top: 20.0),
+          child: StandardButton(
+            Textb: 'Continuar',
+            route: MaterialPageRoute(
+              builder: (context) =>
+                  ChangeNotifierProvider<SelectedTicketsProvider>(
+                create: (_) => SelectedTicketsProvider(),
+                child: const StartPage(),
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
-import 'package:provider/provider.dart';
 
-import '../../../modules/Events/ticket_selection.dart';
-import '../../../providers/events/selected_tickets.dart';
-
-class SeeEventTicket extends StatelessWidget {
+class StandardButton extends StatelessWidget {
   final String Textb;
-  const SeeEventTicket({Key? key, required this.Textb}) : super(key: key);
+  final MaterialPageRoute route;
+  const StandardButton({Key? key, required this.Textb, required this.route})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -21,13 +19,7 @@ class SeeEventTicket extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(
-              builder: (context) =>
-                  ChangeNotifierProvider<SelectedTicketsProvider>(
-                create: (_) => SelectedTicketsProvider(),
-                child: const TicketSelectionPage(),
-              ),
-            ),
+            route,
           );
         },
         child: Text(

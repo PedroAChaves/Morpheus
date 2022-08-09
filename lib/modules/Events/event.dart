@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:morpheus/models/event.dart';
+import 'package:morpheus/modules/Events/ticket_selection.dart';
 import 'package:morpheus/shared/themes/app_colors.dart';
 import 'package:morpheus/shared/widgets/image_view.dart';
 import 'package:provider/provider.dart';
 
+import '../../providers/events/selected_tickets.dart';
 import '../../providers/home/favorites_events.dart';
-import '../../shared/widgets/ticket_selection/see_event_ticket.dart';
+import '../../shared/widgets/ticket_selection/standard_button.dart';
 
 class DetailScreen extends StatelessWidget {
   final AppEvent event;
@@ -303,10 +305,18 @@ class DetailScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                  child: SeeEventTicket(
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                  child: StandardButton(
                     Textb: 'Ver ingressos',
+                    route: MaterialPageRoute(
+                      builder: (context) =>
+                          ChangeNotifierProvider<SelectedTicketsProvider>(
+                        create: (_) => SelectedTicketsProvider(),
+                        child: const TicketSelectionPage(),
+                      ),
+                    ),
                   ),
                 ),
               ],
