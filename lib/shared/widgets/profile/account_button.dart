@@ -4,13 +4,10 @@ import 'package:morpheus/shared/themes/app_colors.dart';
 class AccountButton extends StatefulWidget {
   final Icon icon;
   final Text text;
-  final String pagePath;
+  final MaterialPageRoute route;
 
   const AccountButton(
-      {Key? key,
-      required this.icon,
-      required this.text,
-      required this.pagePath})
+      {Key? key, required this.icon, required this.text, required this.route})
       : super(key: key);
 
   @override
@@ -35,14 +32,17 @@ class _AccountButtonState extends State<AccountButton> {
         ],
       ),
       child: TextButton(
-        onPressed: () => Navigator.pushNamed(context, widget.pagePath),
+        onPressed: () {
+          Navigator.push(
+            context,
+            widget.route,
+          );
+        },
         style: ButtonStyle(
           foregroundColor: MaterialStateProperty.all<Color>(
             AppColors.primary,
           ),
-          overlayColor: MaterialStateProperty.all<Color>(
-            AppColors.light
-          ),
+          overlayColor: MaterialStateProperty.all<Color>(AppColors.light),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),

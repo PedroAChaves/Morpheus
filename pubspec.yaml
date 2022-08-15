@@ -54,6 +54,7 @@ dependencies:
   localization: ^2.1.0
   qr_code_scanner: ^0.7.0
   brasil_fields: 1.4.5
+  html_editor_enhanced: ^2.0.0
 
 dev_dependencies:
   flutter_test:

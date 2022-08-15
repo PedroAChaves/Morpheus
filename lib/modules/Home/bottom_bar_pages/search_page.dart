@@ -174,16 +174,17 @@ class _SearchPageState extends State<SearchPage> {
                                     ),
                                     IconButton(
                                       onPressed: () => value.setValue(
-                                          nearbyEventsProvider.events[
-                                              nearbyEventsProvider.events
-                                                      .indexOf(value.event) -
-                                                  1]),
+                                        nearbyEventsProvider.events[
+                                            nearbyEventsProvider.events
+                                                    .indexOf(value.event) -
+                                                1],
+                                      ),
                                       icon: const Icon(Icons.navigate_before),
                                       color: AppColors.primary,
                                       iconSize: 34,
                                     ),
                                   ],
-                                )
+                                ),
                               ],
                             ),
                             Align(
@@ -218,7 +219,8 @@ class _SearchPageState extends State<SearchPage> {
                                   onPressed: () {
                                     favorites.save(value.event);
                                     final snackBar = SnackBar(
-                                      content: const Text('Evento adicionado aos favoritos'),
+                                      content: const Text(
+                                          'Evento adicionado aos favoritos'),
                                       action: SnackBarAction(
                                           label: 'Desfazer',
                                           onPressed: () =>
@@ -251,11 +253,12 @@ class _SearchPageState extends State<SearchPage> {
                                       ),
                                     ),
                                   ),
-                                )
+                                ),
                               ],
-                            )
+                            ),
                           ],
-                        ))
+                        ),
+                      )
                     : Container(
                         padding: const EdgeInsets.symmetric(
                             vertical: 12, horizontal: 20),
@@ -333,21 +336,25 @@ class _SearchPageState extends State<SearchPage> {
                                       color: AppColors.primary,
                                     ),
                                     onChanged: (String? newValue) async {
-                                      setState(() {
-                                        _selectedState = newValue!;
-                                        _selectedCity = null;
-                                      });
+                                      setState(
+                                        () {
+                                          _selectedState = newValue!;
+                                          _selectedCity = null;
+                                        },
+                                      );
                                       await _fetchCities(_selectedState!);
                                       setState(() => _hasSelectedState = true);
                                     },
-                                    items: _states.map((state) {
-                                      return DropdownMenuItem(
-                                        child: Text(
-                                          state.name,
-                                        ),
-                                        value: state.code,
-                                      );
-                                    }).toList(),
+                                    items: _states.map(
+                                      (state) {
+                                        return DropdownMenuItem(
+                                          child: Text(
+                                            state.name,
+                                          ),
+                                          value: state.code,
+                                        );
+                                      },
+                                    ).toList(),
                                   ),
                                 ),
                                 Visibility(
@@ -377,12 +384,14 @@ class _SearchPageState extends State<SearchPage> {
                                         setState(
                                             () => _selectedCity = newValue!);
                                       },
-                                      items: _cities.map((city) {
-                                        return DropdownMenuItem(
-                                          child: Text(city.name),
-                                          value: city.name,
-                                        );
-                                      }).toList(),
+                                      items: _cities.map(
+                                        (city) {
+                                          return DropdownMenuItem(
+                                            child: Text(city.name),
+                                            value: city.name,
+                                          );
+                                        },
+                                      ).toList(),
                                     ),
                                   ),
                                 ),

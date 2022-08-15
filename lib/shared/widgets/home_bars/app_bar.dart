@@ -17,8 +17,12 @@ class _AppTopBarState extends State<AppTopBar> {
     return AppBar(
       backgroundColor: AppColors.primary,
       title: Center(
-          child: Image.asset('images/title.png', height: 100, width: 110),
-          ),
+        child: Image.asset(
+          'images/title.png',
+          height: 100,
+          width: 110,
+        ),
+      ),
     );
   }
 }
