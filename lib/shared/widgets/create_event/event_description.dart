@@ -34,7 +34,7 @@ class _CreateEventDescriptionState extends State<CreateEventDescription> {
             textAlign: TextAlign.start,
           ),
         ),
-        // EnchantedTextEditor()
+        EnchantedTextEditor(),
       ],
     );
   }

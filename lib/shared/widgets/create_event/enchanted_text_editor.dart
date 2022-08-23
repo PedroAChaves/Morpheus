@@ -15,15 +15,11 @@ class _EnchantedTextEditorState extends State<EnchantedTextEditor> {
     return HtmlEditor(
       controller: controller, //required
       htmlEditorOptions: const HtmlEditorOptions(
-        hint: "Your text here...",
+        hint: "Descrição do evento...",
         //initalText: "text content initial, if any",
       ),
-      htmlToolbarOptions: const HtmlToolbarOptions(defaultToolbarButtons: [
-        //add constructors here and set buttons to false, e.g.
-        ParagraphButtons(lineHeight: false, caseConverter: false)
-      ]),
       otherOptions: const OtherOptions(
-        height: 400,
+        height: 300,
       ),
     );
   }

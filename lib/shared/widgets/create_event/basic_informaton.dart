@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:morpheus/shared/widgets/create_event/category_list.dart';
 import 'package:morpheus/shared/widgets/create_event/subjects_list.dart';
-
+import 'package:select_form_field/select_form_field.dart';
 import '../purchase_page/editable_text_field.dart';
 
 class CreateBasicInformation extends StatefulWidget {
@@ -84,7 +85,7 @@ class _CreateBasicInformationState extends State<CreateBasicInformation> {
             textAlign: TextAlign.start,
           ),
         ),
-        const SubjectsList(),
+        const CategoryList(),
       ],
     );
   }

@@ -54,7 +54,9 @@ dependencies:
   localization: ^2.1.0
   qr_code_scanner: ^0.7.0
   brasil_fields: 1.4.5
-  html_editor_enhanced: ^2.0.0
+  html_editor_enhanced: ^2.4.0
+  select_form_field: "^2.2.0"
+  table_calendar: ^3.0.6
 
 dev_dependencies:
   flutter_test:

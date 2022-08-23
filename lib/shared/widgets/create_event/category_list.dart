@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:select_form_field/select_form_field.dart';
 
-class SubjectsList extends StatefulWidget {
-  const SubjectsList({Key? key}) : super(key: key);
+class CategoryList extends StatefulWidget {
+  const CategoryList({Key? key}) : super(key: key);
 
   @override
-  State<SubjectsList> createState() => _SubjectsListState();
+  State<CategoryList> createState() => _CategoryListState();
 }
 
-class _SubjectsListState extends State<SubjectsList> {
+class _CategoryListState extends State<CategoryList> {
   String dropdownValue = 'One';
 
   @override
@@ -16,17 +16,17 @@ class _SubjectsListState extends State<SubjectsList> {
     final List<Map<String, dynamic>> _items = [
       {
         'value': '1',
-        'label': 'Show',
+        'label': 'Família',
         'textStyle': const TextStyle(color: Colors.black),
       },
       {
         'value': '2',
-        'label': 'Revoada',
+        'label': 'Só puto',
         'textStyle': const TextStyle(color: Colors.black),
       },
       {
         'value': '3',
-        'label': 'Teatro',
+        'label': 'Criança',
         'textStyle': const TextStyle(color: Colors.black),
       },
     ];
